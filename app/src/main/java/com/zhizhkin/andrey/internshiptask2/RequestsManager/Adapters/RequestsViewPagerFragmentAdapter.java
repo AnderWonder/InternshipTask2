@@ -4,7 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.zhizhkin.andrey.internshiptask2.RequestsManager.RequestsFragment;
+import com.zhizhkin.andrey.internshiptask2.RequestsManager.Fragments.RequestsFragment;
 
 import java.util.List;
 

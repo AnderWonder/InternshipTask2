@@ -17,6 +17,9 @@ import android.view.MenuItem;
 
 import com.zhizhkin.andrey.internshiptask2.R;
 import com.zhizhkin.andrey.internshiptask2.RequestsManager.Adapters.RequestsViewPagerFragmentAdapter;
+import com.zhizhkin.andrey.internshiptask2.RequestsManager.Fragments.RequestsFragment;
+import com.zhizhkin.andrey.internshiptask2.RequestsManager.Fragments.RequestsFragmentListView;
+import com.zhizhkin.andrey.internshiptask2.RequestsManager.Fragments.RequestsFragmentRecyclerView;
 import com.zhizhkin.andrey.internshiptask2.RequestsManager.Model.RequestsManager;
 import com.zhizhkin.andrey.internshiptask2.RequestsManager.Model.UserRequest;
 
@@ -54,19 +57,20 @@ public class RequestsManagerActivity extends AppCompatActivity
 
         ViewPager viewPager=(ViewPager)findViewById(R.id.requestsManagerViewPager);
         ArrayList<RequestsFragment> pages = new ArrayList<>();
-        RequestsManager requestsManager = RequestsManager.getInstance();
-        UserRequest.StatusType status = UserRequest.StatusType.IN_PROCESS;
-        pages.add((new RequestsFragmentRecyclerView())
-                    .setRequests(requestsManager.getRequests(status))
-                    .setTitle(status.toString()));
-        status = UserRequest.StatusType.DONE;
-        pages.add((new RequestsFragmentRecyclerView())
-                    .setRequests(requestsManager.getRequests(status))
-                    .setTitle(status.toString()));
+        pages.add(createPage(UserRequest.StatusType.DONE, new RequestsFragmentRecyclerView()));
+        pages.add(createPage(UserRequest.StatusType.WAITING, new RequestsFragmentRecyclerView()));
+        pages.add(createPage(UserRequest.StatusType.IN_PROCESS, new RequestsFragmentListView()));
+
         viewPager.setAdapter(new RequestsViewPagerFragmentAdapter(getSupportFragmentManager(),pages));
 
         ((TabLayout) findViewById(R.id.requestsManagerTabLayout)).setupWithViewPager(viewPager);
 
+    }
+
+    private RequestsFragment createPage(UserRequest.StatusType status, RequestsFragment fragment){
+        fragment.setRequests(RequestsManager.getInstance().getRequests(status));
+        fragment.setTitle(status.toString());
+        return fragment;
     }
 
     @Override

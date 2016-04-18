@@ -30,6 +30,10 @@ public class RequestsManager {
         mRequests.add(new UserRequest(UserRequest.StatusType.DONE,"./././/./././............."));
         mRequests.add(new UserRequest(UserRequest.StatusType.DONE,"-------------------------"));
         mRequests.add(new UserRequest(UserRequest.StatusType.DONE,"777777777777777777777777777"));
+        mRequests.add(new UserRequest(UserRequest.StatusType.WAITING,"WAITINGQWEADASDFSAFSDFSDFGSDFSDF"));
+        mRequests.add(new UserRequest(UserRequest.StatusType.WAITING,"WAITING./././/./././............."));
+        mRequests.add(new UserRequest(UserRequest.StatusType.WAITING,"WAITING-------------------------"));
+        mRequests.add(new UserRequest(UserRequest.StatusType.WAITING,"WAITING777777777777777777777777777"));
     }
 
     public List<UserRequest> getRequests(UserRequest.StatusType status){

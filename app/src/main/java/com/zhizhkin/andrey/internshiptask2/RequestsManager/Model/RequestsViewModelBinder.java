@@ -1,4 +1,4 @@
-package com.zhizhkin.andrey.internshiptask2.RequestsManager.Adapters;
+package com.zhizhkin.andrey.internshiptask2.RequestsManager.Model;
 
 import android.content.Intent;
 import android.view.View;
@@ -6,8 +6,6 @@ import android.widget.TextView;
 
 import com.zhizhkin.andrey.internshiptask2.R;
 import com.zhizhkin.andrey.internshiptask2.RequestViewer.RequestViewerActivity;
-import com.zhizhkin.andrey.internshiptask2.RequestsManager.Model.RequestsManager;
-import com.zhizhkin.andrey.internshiptask2.RequestsManager.Model.UserRequest;
 import com.zhizhkin.andrey.internshiptask2.RequestsManager.RequestsManagerActivity;
 
 

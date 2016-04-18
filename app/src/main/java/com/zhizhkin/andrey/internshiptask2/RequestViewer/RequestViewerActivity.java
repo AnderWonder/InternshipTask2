@@ -26,6 +26,7 @@ public class RequestViewerActivity extends AppCompatActivity implements View.OnC
         super.onCreate(savedInstanceState);
         setContentView(R.layout.request_viewer_main);
         setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         createRecyclerView(new RecyclerViewPicassoUriAdapter(getUriListFromAssetsPictures(), this));
         setToastsToTextViewsInLayout((LinearLayout) findViewById(R.id.linearLayoutInScroll));
