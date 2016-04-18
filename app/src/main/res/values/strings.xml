@@ -5,4 +5,23 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="request_viewer_request_type">Communal services</string>
+    <string name="request_viewer_request_id" translatable="false">CE-1257218</string>
+    <string name="request_viewer_request_created">Created</string>
+    <string name="request_viewer_request_registered">Registered</string>
+    <string name="request_viewer_solve_until">Must be solved by</string>
+    <string name="request_viewer_request_responsible">Responsible</string>
+    <string name="request_viewer_request_description">Opened hatch (near a sandwich-board), district of turn 18 and 19 streetcars on Mira ave. from the Donetsk highway</string>
+    <string name="request_viewer_request_creation_date">February 25, 2016</string>
+    <string name="request_viewer_request_registration_date">February 26, 2016</string>
+    <string name="request_viewer_request_solve_date">February 29, 2016</string>
+    <string name="request_viewer_responsible_name">Dnipropetrovs\'k MVK()</string>
+    <string name="request_viewer_request_status">In process</string>
+    <string name="request_viewer_pictures_assets_folder" translatable="false">"pictures"</string>
+    <string name="request_viewer_uri_part_assets" translatable="false">file:///android_asset/</string>
+
 </resources>

@@ -3,13 +3,14 @@
     package="com.zhizhkin.andrey.internshiptask2">
 
     <application
+        android:name=".EcontactApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".RequestsManager.RequestsManagerActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -17,6 +18,13 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".RequestViewer.RequestViewerActivity"
+            android:label="@string/request_viewer_request_id"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName=".RequestsManager.RequestsManagerActivity">
+
         </activity>
     </application>
 
