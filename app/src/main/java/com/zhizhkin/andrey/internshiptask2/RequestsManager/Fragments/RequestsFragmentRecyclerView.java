@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.zhizhkin.andrey.internshiptask2.R;
-import com.zhizhkin.andrey.internshiptask2.RequestsManager.Adapters.RequestsRecyclerViewAdapter;
 
 public class RequestsFragmentRecyclerView extends RequestsFragment {
 

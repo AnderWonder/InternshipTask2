@@ -1,4 +1,4 @@
-package com.zhizhkin.andrey.internshiptask2.RequestsManager.Adapters;
+package com.zhizhkin.andrey.internshiptask2.RequestsManager;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

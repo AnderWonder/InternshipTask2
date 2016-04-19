@@ -2,7 +2,7 @@ package com.zhizhkin.andrey.internshiptask2.RequestsManager.Fragments;
 
 
 import android.support.v4.app.Fragment;
-import com.zhizhkin.andrey.internshiptask2.RequestsManager.Model.UserRequest;
+import com.zhizhkin.andrey.internshiptask2.Model.UserRequest;
 
 import java.util.List;
 

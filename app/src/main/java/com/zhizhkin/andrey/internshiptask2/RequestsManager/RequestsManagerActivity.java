@@ -16,12 +16,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.zhizhkin.andrey.internshiptask2.R;
-import com.zhizhkin.andrey.internshiptask2.RequestsManager.Adapters.RequestsViewPagerFragmentAdapter;
 import com.zhizhkin.andrey.internshiptask2.RequestsManager.Fragments.RequestsFragment;
 import com.zhizhkin.andrey.internshiptask2.RequestsManager.Fragments.RequestsFragmentListView;
 import com.zhizhkin.andrey.internshiptask2.RequestsManager.Fragments.RequestsFragmentRecyclerView;
-import com.zhizhkin.andrey.internshiptask2.RequestsManager.Model.RequestsManager;
-import com.zhizhkin.andrey.internshiptask2.RequestsManager.Model.UserRequest;
+import com.zhizhkin.andrey.internshiptask2.Model.RequestsManager;
+import com.zhizhkin.andrey.internshiptask2.Model.UserRequest;
 
 import java.util.ArrayList;
 
@@ -57,9 +56,9 @@ public class RequestsManagerActivity extends AppCompatActivity
 
         ViewPager viewPager=(ViewPager)findViewById(R.id.requestsManagerViewPager);
         ArrayList<RequestsFragment> pages = new ArrayList<>();
+        pages.add(createPage(UserRequest.StatusType.IN_PROCESS, new RequestsFragmentListView()));
         pages.add(createPage(UserRequest.StatusType.DONE, new RequestsFragmentRecyclerView()));
         pages.add(createPage(UserRequest.StatusType.WAITING, new RequestsFragmentRecyclerView()));
-        pages.add(createPage(UserRequest.StatusType.IN_PROCESS, new RequestsFragmentListView()));
 
         viewPager.setAdapter(new RequestsViewPagerFragmentAdapter(getSupportFragmentManager(),pages));
 

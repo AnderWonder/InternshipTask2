@@ -1,4 +1,4 @@
-package com.zhizhkin.andrey.internshiptask2.RequestsManager.Adapters;
+package com.zhizhkin.andrey.internshiptask2.RequestsManager.Fragments;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -6,8 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.zhizhkin.andrey.internshiptask2.R;
-import com.zhizhkin.andrey.internshiptask2.RequestsManager.Model.RequestsViewModelBinder;
-import com.zhizhkin.andrey.internshiptask2.RequestsManager.Model.UserRequest;
+import com.zhizhkin.andrey.internshiptask2.Model.UserRequestViewModelBinder;
+import com.zhizhkin.andrey.internshiptask2.Model.UserRequest;
 
 import java.util.List;
 
@@ -33,7 +33,7 @@ public class RequestsRecyclerViewAdapter extends RecyclerView.Adapter<RequestsRe
 
         @Override
         public void onClick(View v) {
-            RequestsViewModelBinder.startRequestViewer(mUserRequest,v);
+            UserRequestViewModelBinder.startRequestViewer(mUserRequest,v);
         }
     }
 
@@ -48,7 +48,7 @@ public class RequestsRecyclerViewAdapter extends RecyclerView.Adapter<RequestsRe
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        RequestsViewModelBinder.Bind(holder.mView, mUserRequests.get(position));
+        UserRequestViewModelBinder.Bind(holder.mView, mUserRequests.get(position));
         holder.setUserRequest(mUserRequests.get(position));
     }
 

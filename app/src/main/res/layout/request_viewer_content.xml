@@ -11,10 +11,10 @@
     android:paddingRight="@dimen/request_viewer_activity_horizontal_margin"
     android:paddingTop="@dimen/request_viewer_activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".RequestViewerActivity">
+    tools:context=".RequestViewer.RequestViewerActivity">
 
     <ScrollView
-        android:id="@+id/scrollView"
+        android:id="@+id/requestViewerScrollView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -37,7 +37,7 @@
                     android:text="@string/request_viewer_request_type" />
 
                 <TextView
-                    android:id="@+id/requestStatusTextView"
+                    android:id="@+id/requestViewerStatusTextView"
                     style="@style/Base.TextAppearance.AppCompat.Inverse"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -70,7 +70,7 @@
                     android:text="@string/request_viewer_request_created" />
 
                 <TextView
-                    android:id="@+id/requestCreationDateTextView"
+                    android:id="@+id/requestViewerCreationDateTextView"
                     style="@style/Base.TextAppearance.AppCompat.Body1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -98,7 +98,7 @@
                     android:text="@string/request_viewer_request_registered" />
 
                 <TextView
-                    android:id="@+id/requestRegistrationDateTextView"
+                    android:id="@+id/requestViewerRegistrationDateTextView"
                     style="@style/Base.TextAppearance.AppCompat.Body1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -126,7 +126,7 @@
                     android:text="@string/request_viewer_solve_until" />
 
                 <TextView
-                    android:id="@+id/requestSolveDateTextView"
+                    android:id="@+id/requestViewerSolveDateTextView"
                     style="@style/Base.TextAppearance.AppCompat.Body1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -172,7 +172,7 @@
                 android:background="@color/material_grey_400" />
 
             <TextView
-                android:id="@+id/requestDescriptionTextView"
+                android:id="@+id/requestViewerRequestInfoTextView"
                 style="@style/TextAppearance.AppCompat.Subhead"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

@@ -9,13 +9,13 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.zhizhkin.andrey.internshiptask2.R;
-import com.zhizhkin.andrey.internshiptask2.RequestsManager.Model.RequestsViewModelBinder;
-import com.zhizhkin.andrey.internshiptask2.RequestsManager.Model.UserRequest;
+import com.zhizhkin.andrey.internshiptask2.Model.UserRequestViewModelBinder;
+import com.zhizhkin.andrey.internshiptask2.Model.UserRequest;
 
 public class RequestsFragmentListView extends RequestsFragment {
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(LayoutInflater inflater, final ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.requests_manager_fragment_listview, container, false);
         ListView requestsListView = (ListView) view.findViewById(R.id.requestsManagerListView);
@@ -23,11 +23,11 @@ public class RequestsFragmentListView extends RequestsFragment {
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
                 View itemView = convertView;
-                if (convertView == null) {
+                if (itemView == null) {
                     itemView = LayoutInflater.from(parent.getContext())
                             .inflate(R.layout.requests_manager_item, parent, false);
                 }
-                RequestsViewModelBinder.Bind(itemView, mUserRequests.get(position));
+                UserRequestViewModelBinder.Bind(itemView, mUserRequests.get(position));
                 return itemView;
 
             }
@@ -36,7 +36,7 @@ public class RequestsFragmentListView extends RequestsFragment {
         requestsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                RequestsViewModelBinder.startRequestViewer(mUserRequests.get(position),view);
+                UserRequestViewModelBinder.startRequestViewer(mUserRequests.get(position),view);
             }
         });
 

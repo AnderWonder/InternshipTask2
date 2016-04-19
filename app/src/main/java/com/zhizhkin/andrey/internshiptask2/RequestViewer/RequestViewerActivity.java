@@ -6,14 +6,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.zhizhkin.andrey.internshiptask2.R;
+import com.zhizhkin.andrey.internshiptask2.Model.RequestsManager;
+import com.zhizhkin.andrey.internshiptask2.Model.UserRequestViewModelBinder;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -27,6 +29,9 @@ public class RequestViewerActivity extends AppCompatActivity implements View.OnC
         setContentView(R.layout.request_viewer_main);
         setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        if(RequestsManager.getInstance()==null){RequestsManager.initInstance(getResources());}
+        UserRequestViewModelBinder.Bind((ScrollView)findViewById(R.id.requestViewerScrollView),RequestsManager.getInstance().getCurrent());
 
         createRecyclerView(new RecyclerViewPicassoUriAdapter(getUriListFromAssetsPictures(), this));
         setToastsToTextViewsInLayout((LinearLayout) findViewById(R.id.linearLayoutInScroll));

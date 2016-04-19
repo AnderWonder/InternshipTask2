@@ -24,4 +24,13 @@
     <string name="request_viewer_pictures_assets_folder" translatable="false">"pictures"</string>
     <string name="request_viewer_uri_part_assets" translatable="false">file:///android_asset/</string>
 
+    <string-array name="streets_array">
+        <item>вул. Вадима Гетьмана</item>
+        <item>пр. Б.Хмельницького</item>
+        <item>вул. Инженерна</item>
+        <item>вул. Космічна</item>
+        <item>Запорожьске шоссе</item>
+        <item>пр. Тітова</item>
+    </string-array>
+
 </resources>
