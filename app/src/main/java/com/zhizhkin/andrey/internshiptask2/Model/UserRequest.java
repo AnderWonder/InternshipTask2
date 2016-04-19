@@ -1,13 +1,18 @@
 package com.zhizhkin.andrey.internshiptask2.Model;
 
 import android.net.Uri;
+
+import com.zhizhkin.andrey.internshiptask2.R;
+
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
 
 public class UserRequest {
 
-    private RequestType mRequestType;
+
+
+    private RequestType mType;
     private StatusType mStatus;
     private int mLikes;
     private Date mDateCreated;
@@ -30,8 +35,12 @@ public class UserRequest {
         mDateSolveBy=dateSolveBy;
     }
 
-    public RequestType getRequestType() {
-        return mRequestType;
+    public RequestType getType() {
+        return mType;
+    }
+
+    public void setType(RequestType mRequestType) {
+        this.mType = mRequestType;
     }
 
     public StatusType getStatus() {
@@ -105,11 +114,20 @@ public class UserRequest {
     }
 
 
-    public enum RequestType {DISMANTING("Демонтаж in"),DONE("Done"),WAITING("Waiting");
+    public enum RequestType {   TYPE1("Демонтаж інших об’єктів, що входять до переліку мал... in", R.drawable.ic_menu_camera),
+                                TYPE2("Прибирання та санітарній стан території", R.drawable.ic_menu_gallery),
+                                TYPE3("Питання стосовно нарахування боргу електрое...", R.drawable.ic_menu_manage),
+                                TYPE4("Ремонт та обслуговування ліфтів", R.drawable.ic_menu_share);
 
         private String mName;
-        RequestType(String name) {
+        private int mIcId;
+        RequestType(String name, int icId) {
             mName=name;
+            mIcId=icId;
+        }
+
+        public int getIconId(){
+            return mIcId;
         }
 
         @Override

@@ -37,7 +37,7 @@
                     android:text="@string/request_viewer_request_type" />
 
                 <TextView
-                    android:id="@+id/requestViewerStatusTextView"
+                    android:id="@+id/requestStatusTextView"
                     style="@style/Base.TextAppearance.AppCompat.Inverse"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -70,7 +70,7 @@
                     android:text="@string/request_viewer_request_created" />
 
                 <TextView
-                    android:id="@+id/requestViewerCreationDateTextView"
+                    android:id="@+id/requestCreationDateTextView"
                     style="@style/Base.TextAppearance.AppCompat.Body1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -98,7 +98,7 @@
                     android:text="@string/request_viewer_request_registered" />
 
                 <TextView
-                    android:id="@+id/requestViewerRegistrationDateTextView"
+                    android:id="@+id/requestRegistrationDateTextView"
                     style="@style/Base.TextAppearance.AppCompat.Body1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -126,7 +126,7 @@
                     android:text="@string/request_viewer_solve_until" />
 
                 <TextView
-                    android:id="@+id/requestViewerSolveDateTextView"
+                    android:id="@+id/requestSolveDateTextView"
                     style="@style/Base.TextAppearance.AppCompat.Body1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -172,7 +172,7 @@
                 android:background="@color/material_grey_400" />
 
             <TextView
-                android:id="@+id/requestViewerRequestInfoTextView"
+                android:id="@+id/requestInfoTextView"
                 style="@style/TextAppearance.AppCompat.Subhead"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

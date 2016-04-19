@@ -40,7 +40,9 @@ public class RequestsManager {
     private static UserRequest generateUserRequest(Resources resources) {
         Random random = new Random();
         UserRequest newUserRequest = new UserRequest();
+        newUserRequest.setType(UserRequest.RequestType.values()[random.nextInt(UserRequest.RequestType.values().length)]);
         newUserRequest.setStatus(UserRequest.StatusType.values()[random.nextInt(UserRequest.StatusType.values().length)]);
+
         newUserRequest.setLikes(random.nextInt(100));
         String[] streetsArray = resources.getStringArray(R.array.streets_array);
         newUserRequest.setAddress(streetsArray[random.nextInt(streetsArray.length)]+", "+(random.nextInt(150)+1));

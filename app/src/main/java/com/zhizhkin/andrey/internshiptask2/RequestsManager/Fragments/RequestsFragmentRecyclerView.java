@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.melnykov.fab.FloatingActionButton;
 import com.zhizhkin.andrey.internshiptask2.R;
 
 public class RequestsFragmentRecyclerView extends RequestsFragment {
@@ -15,9 +16,11 @@ public class RequestsFragmentRecyclerView extends RequestsFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.requests_manager_fragment_recyclerview, container, false);
-        RecyclerView requestsRecyclerView = (RecyclerView) view.findViewById(R.id.requestManagerRecyclerView);
+        RecyclerView requestsRecyclerView = (RecyclerView) view.findViewById(R.id.requestsManagerRecyclerView);
         requestsRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         requestsRecyclerView.setAdapter(new RequestsRecyclerViewAdapter(mUserRequests));
+        FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.fab);
+        fab.attachToRecyclerView(requestsRecyclerView);
         return view;
     }
 

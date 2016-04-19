@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RequestsManager.RequestsManagerActivity">
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/requestManagerRecyclerView"
+        android:id="@+id/requestsManagerRecyclerView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:listitem="@layout/requests_manager_item"/>
-</LinearLayout>
+    <include
+        layout="@layout/requests_manager_fab"
+        app:layout_anchor="@id/requestsManagerRecyclerView"/>
+</android.support.design.widget.CoordinatorLayout>

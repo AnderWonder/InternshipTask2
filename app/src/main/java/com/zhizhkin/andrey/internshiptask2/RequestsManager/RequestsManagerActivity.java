@@ -36,15 +36,6 @@ public class RequestsManagerActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -56,9 +47,9 @@ public class RequestsManagerActivity extends AppCompatActivity
 
         ViewPager viewPager=(ViewPager)findViewById(R.id.requestsManagerViewPager);
         ArrayList<RequestsFragment> pages = new ArrayList<>();
-        pages.add(createPage(UserRequest.StatusType.IN_PROCESS, new RequestsFragmentListView()));
+        pages.add(createPage(UserRequest.StatusType.IN_PROCESS, new RequestsFragmentRecyclerView()));
         pages.add(createPage(UserRequest.StatusType.DONE, new RequestsFragmentRecyclerView()));
-        pages.add(createPage(UserRequest.StatusType.WAITING, new RequestsFragmentRecyclerView()));
+        pages.add(createPage(UserRequest.StatusType.WAITING, new RequestsFragmentListView()));
 
         viewPager.setAdapter(new RequestsViewPagerFragmentAdapter(getSupportFragmentManager(),pages));
 
