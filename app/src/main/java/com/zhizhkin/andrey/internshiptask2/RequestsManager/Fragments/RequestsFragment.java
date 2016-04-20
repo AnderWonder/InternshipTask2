@@ -2,6 +2,7 @@ package com.zhizhkin.andrey.internshiptask2.RequestsManager.Fragments;
 
 
 import android.support.v4.app.Fragment;
+
 import com.zhizhkin.andrey.internshiptask2.Model.UserRequest;
 
 import java.util.List;
@@ -16,18 +17,16 @@ public class RequestsFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public RequestsFragment setRequests(List<UserRequest> requests){
+    public void setRequests(List<UserRequest> requests) {
         mUserRequests = requests;
-        return this;
     }
 
-    public RequestsFragment setTitle(String title){
-        mTitle=title;
-        return this;
-    }
-
-    public String getTitle(){
+    public String getTitle() {
         return mTitle;
+    }
+
+    public void setTitle(String title) {
+        mTitle = title;
     }
 
 }

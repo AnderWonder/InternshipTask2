@@ -2,6 +2,7 @@ package com.zhizhkin.andrey.internshiptask2.Model;
 
 import android.net.Uri;
 
+import com.zhizhkin.andrey.internshiptask2.InternshipTask2Application;
 import com.zhizhkin.andrey.internshiptask2.R;
 
 import java.util.Date;
@@ -10,30 +11,18 @@ import java.util.List;
 
 public class UserRequest {
 
-
-
+    public static final int MILLIS_IN_DAY = 1000 * 60 * 60 * 24;
     private RequestType mType;
     private StatusType mStatus;
     private int mLikes;
-    private Date mDateCreated;
+    private Date mCreationDate;
     private Date mRegistrationDate;
-    private Date mDateSolveBy;
+    private Date mDateToSolve;
     private String mRequestInfo;
     private String mAddress;
+    private String mId;
     private String mResponsible;
     private List<Uri> mPictures;
-
-    public UserRequest(){
-    }
-
-    public UserRequest(StatusType status,String requestInfo, String address, Date dateCreated, Date dateRegistered,Date dateSolveBy){
-        mStatus=status;
-        mRequestInfo=requestInfo;
-        mAddress=address;
-        mDateCreated=dateCreated;
-        mRegistrationDate =dateRegistered;
-        mDateSolveBy=dateSolveBy;
-    }
 
     public RequestType getType() {
         return mType;
@@ -60,11 +49,11 @@ public class UserRequest {
     }
 
     public Date getDateCreated() {
-        return mDateCreated;
+        return mCreationDate;
     }
 
     public void setDateCreated(Date mDateCreated) {
-        this.mDateCreated = mDateCreated;
+        this.mCreationDate = mDateCreated;
     }
 
     public Date getRegistrationDate() {
@@ -75,18 +64,18 @@ public class UserRequest {
         this.mRegistrationDate = mRegistrationDate;
     }
 
-    public Date getDateSolveBy() {
-        return mDateSolveBy;
+    public Date getDateToSolve() {
+        return mDateToSolve;
     }
 
-    public void setDateSolveBy(Date mDateSolveBy) {
-        this.mDateSolveBy = mDateSolveBy;
+    public void setDateToSolve(Date mDateSolveBy) {
+        this.mDateToSolve = mDateSolveBy;
     }
 
     public int getDaysLeft() {
         GregorianCalendar gc = new GregorianCalendar();
-        gc.setTime(mDateSolveBy);
-        return (int)((new GregorianCalendar().getTimeInMillis()-gc.getTimeInMillis())/(1000 * 60 * 60 * 24));
+        gc.setTime(mDateToSolve);
+        return (int) ((new GregorianCalendar().getTimeInMillis() - gc.getTimeInMillis()) / MILLIS_IN_DAY);
     }
 
     public String getRequestInfo() {
@@ -109,45 +98,66 @@ public class UserRequest {
         return mResponsible;
     }
 
+    public void setResponsible(String mResponsible) {
+        this.mResponsible = mResponsible;
+    }
+
+    public String getId() {
+        return mId;
+    }
+
+    public void setId(String mId) {
+        this.mId = mId;
+    }
+
     public List<Uri> getPictures() {
         return mPictures;
     }
 
+    public void setPictures(List<Uri> mPictures) {
+        this.mPictures = mPictures;
+    }
 
-    public enum RequestType {   TYPE1("Демонтаж інших об’єктів, що входять до переліку мал... in", R.drawable.ic_menu_camera),
-                                TYPE2("Прибирання та санітарній стан території", R.drawable.ic_menu_gallery),
-                                TYPE3("Питання стосовно нарахування боргу електрое...", R.drawable.ic_menu_manage),
-                                TYPE4("Ремонт та обслуговування ліфтів", R.drawable.ic_menu_share);
+    public enum RequestType {
+        TYPE1(R.string.user_request_type_1, R.drawable.ic_menu_camera),
+        TYPE2(R.string.user_request_type_2, R.drawable.ic_menu_gallery),
+        TYPE3(R.string.user_request_type_3, R.drawable.ic_menu_manage),
+        TYPE4(R.string.user_request_type_4, R.drawable.ic_menu_share);
 
         private String mName;
+        private int mTypeStringResourceId;
         private int mIcId;
-        RequestType(String name, int icId) {
-            mName=name;
-            mIcId=icId;
+
+        RequestType(int typeStringResourceId, int icId) {
+            mTypeStringResourceId = typeStringResourceId;
+            mIcId = icId;
         }
 
-        public int getIconId(){
+        public int getIconId() {
             return mIcId;
         }
 
         @Override
         public String toString() {
-            return mName;
+            return InternshipTask2Application.getContext().getString(mTypeStringResourceId);
         }
     }
 
-    public enum StatusType {IN_PROCESS("In process"),DONE("Done"),WAITING("Waiting");
+    public enum StatusType {
+        IN_PROCESS(R.string.user_request_status_type_1), DONE(R.string.user_request_status_type_2), WAITING(R.string.user_request_status_type_3);
 
-        private String mName;
-        StatusType(String name) {
-            mName=name;
+        private int mNameStringResourceId;
+
+        StatusType(int nameStringResourceId) {
+            mNameStringResourceId = nameStringResourceId;
         }
 
         @Override
         public String toString() {
-            return mName;
+            return InternshipTask2Application.getContext().getString(mNameStringResourceId);
         }
     }
+
 }
 
 

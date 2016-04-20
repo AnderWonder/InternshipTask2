@@ -10,5 +10,4 @@
     android:layout_margin="@dimen/fab_margin"
     android:src="@drawable/ic_fab_plus"
     fab:fab_colorNormal="@color/color_orange"
-    app:layout_anchorGravity="bottom|right|end"
-    fab:fab_colorRipple="@color/color_orange"/>
+    app:layout_anchorGravity="bottom|right|end"/>

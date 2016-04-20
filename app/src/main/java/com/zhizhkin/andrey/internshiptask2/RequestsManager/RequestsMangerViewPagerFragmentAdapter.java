@@ -8,13 +8,13 @@ import com.zhizhkin.andrey.internshiptask2.RequestsManager.Fragments.RequestsFra
 
 import java.util.List;
 
-public class RequestsViewPagerFragmentAdapter extends FragmentPagerAdapter {
+public class RequestsMangerViewPagerFragmentAdapter extends FragmentPagerAdapter {
 
     private List<RequestsFragment> mRequestsFragments;
 
-    public RequestsViewPagerFragmentAdapter(FragmentManager fm, List<RequestsFragment> requestsFragments) {
+    public RequestsMangerViewPagerFragmentAdapter(FragmentManager fm, List<RequestsFragment> requestsFragments) {
         super(fm);
-        mRequestsFragments=requestsFragments;
+        mRequestsFragments = requestsFragments;
     }
 
     @Override

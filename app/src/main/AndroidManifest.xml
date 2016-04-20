@@ -3,7 +3,7 @@
     package="com.zhizhkin.andrey.internshiptask2">
 
     <application
-        android:name=".EcontactApplication"
+        android:name=".InternshipTask2Application"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"

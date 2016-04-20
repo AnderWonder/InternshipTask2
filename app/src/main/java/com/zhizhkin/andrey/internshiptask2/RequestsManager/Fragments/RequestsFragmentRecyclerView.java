@@ -19,8 +19,7 @@ public class RequestsFragmentRecyclerView extends RequestsFragment {
         RecyclerView requestsRecyclerView = (RecyclerView) view.findViewById(R.id.requestsManagerRecyclerView);
         requestsRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         requestsRecyclerView.setAdapter(new RequestsRecyclerViewAdapter(mUserRequests));
-        FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.fab);
-        fab.attachToRecyclerView(requestsRecyclerView);
+        ((FloatingActionButton) view.findViewById(R.id.fab)).attachToRecyclerView(requestsRecyclerView);
         return view;
     }
 

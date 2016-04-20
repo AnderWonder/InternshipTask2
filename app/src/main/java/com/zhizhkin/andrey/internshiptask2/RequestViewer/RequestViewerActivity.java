@@ -1,6 +1,5 @@
 package com.zhizhkin.andrey.internshiptask2.RequestViewer;
 
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,17 +8,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.zhizhkin.andrey.internshiptask2.Model.UserRequest;
 import com.zhizhkin.andrey.internshiptask2.R;
 import com.zhizhkin.andrey.internshiptask2.Model.RequestsManager;
-import com.zhizhkin.andrey.internshiptask2.Model.UserRequestViewModelBinder;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import com.zhizhkin.andrey.internshiptask2.Model.UserRequestViewBinder;
 
 public class RequestViewerActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -30,10 +25,11 @@ public class RequestViewerActivity extends AppCompatActivity implements View.OnC
         setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        if(RequestsManager.getInstance()==null){RequestsManager.initInstance(getResources());}
-        UserRequestViewModelBinder.Bind((ScrollView)findViewById(R.id.requestViewerScrollView),RequestsManager.getInstance().getCurrent());
+        UserRequest userRequest = RequestsManager.getInstance().getCurrent();
+        UserRequestViewBinder.Bind(findViewById(R.id.requestViewerScrollView),userRequest);
+        setTitle(userRequest.getId());
 
-        createRecyclerView(new RecyclerViewPicassoUriAdapter(getUriListFromAssetsPictures(), this));
+        createRecyclerView(new RecyclerViewPicassoUriAdapter(userRequest.getPictures(), this));
         setToastsToTextViewsInLayout((LinearLayout) findViewById(R.id.linearLayoutInScroll));
     }
 
@@ -52,18 +48,6 @@ public class RequestViewerActivity extends AppCompatActivity implements View.OnC
             if (v instanceof TextView) v.setOnClickListener(this);
             else if (v instanceof ViewGroup) setToastsToTextViewsInLayout((ViewGroup) v);
         }
-    }
-
-    private List<Uri> getUriListFromAssetsPictures() {
-        List<Uri> uriArrayList = new ArrayList();
-        String picturesFolder = getString(R.string.request_viewer_pictures_assets_folder);
-        try {
-            for (String filename : getAssets().list(picturesFolder))
-                uriArrayList.add(Uri.parse(getString(R.string.request_viewer_uri_part_assets) + picturesFolder + '/' + filename));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return uriArrayList;
     }
 
     @Override
