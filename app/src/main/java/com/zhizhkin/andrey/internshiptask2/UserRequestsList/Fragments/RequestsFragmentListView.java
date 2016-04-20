@@ -1,4 +1,4 @@
-package com.zhizhkin.andrey.internshiptask2.RequestsManager.Fragments;
+package com.zhizhkin.andrey.internshiptask2.UserRequestsList.Fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

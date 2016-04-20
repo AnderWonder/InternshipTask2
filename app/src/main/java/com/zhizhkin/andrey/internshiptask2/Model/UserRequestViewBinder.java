@@ -7,8 +7,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.zhizhkin.andrey.internshiptask2.R;
-import com.zhizhkin.andrey.internshiptask2.RequestViewer.RequestViewerActivity;
-import com.zhizhkin.andrey.internshiptask2.RequestsManager.RequestsManagerActivity;
+import com.zhizhkin.andrey.internshiptask2.UserRequestViewer.RequestViewerActivity;
+import com.zhizhkin.andrey.internshiptask2.UserRequestsList.UserRequestsListActivity;
 
 import static android.text.format.DateFormat.*;
 
@@ -40,8 +40,8 @@ public class UserRequestViewBinder {
     }
 
     public static void startRequestViewerActivity(UserRequest request, View v) {
-        RequestsManager.getInstance().setCurrent(request);
-        RequestsManagerActivity act = ((RequestsManagerActivity) v.getContext());
+        UserRequestsManager.getInstance().setCurrent(request);
+        UserRequestsListActivity act = ((UserRequestsListActivity) v.getContext());
         act.startActivity(new Intent(act, RequestViewerActivity.class));
     }
 }

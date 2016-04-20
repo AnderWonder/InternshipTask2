@@ -1,4 +1,4 @@
-package com.zhizhkin.andrey.internshiptask2.RequestViewer;
+package com.zhizhkin.andrey.internshiptask2.UserRequestViewer;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 import com.zhizhkin.andrey.internshiptask2.Model.UserRequest;
 import com.zhizhkin.andrey.internshiptask2.R;
-import com.zhizhkin.andrey.internshiptask2.Model.RequestsManager;
+import com.zhizhkin.andrey.internshiptask2.Model.UserRequestsManager;
 import com.zhizhkin.andrey.internshiptask2.Model.UserRequestViewBinder;
 
 public class RequestViewerActivity extends AppCompatActivity implements View.OnClickListener {
@@ -25,7 +25,7 @@ public class RequestViewerActivity extends AppCompatActivity implements View.OnC
         setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        UserRequest userRequest = RequestsManager.getInstance().getCurrent();
+        UserRequest userRequest = UserRequestsManager.getInstance().getCurrent();
         UserRequestViewBinder.Bind(findViewById(R.id.requestViewerScrollView),userRequest);
         setTitle(userRequest.getId());
 

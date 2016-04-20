@@ -1,10 +1,8 @@
 <resources>
-    <string name="app_name">InternshipTask2</string>
+    <string name="app_name">Всі звернення</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-
-    <string name="action_settings">Settings</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -20,10 +18,10 @@
     <string name="request_viewer_request_registration_date">February 26, 2016</string>
     <string name="request_viewer_request_solve_date">February 29, 2016</string>
     <string name="request_viewer_responsible_name">Dnipropetrovs\'k MVK()</string>
-    <string name="request_viewer_request_status">In process</string>
+    <string name="request_viewer_request_status" translatable="false">In process</string>
     <string name="request_viewer_pictures_assets_folder" translatable="false">"pictures"</string>
-    <string name="request_viewer_uri_part_assets" translatable="false">file:///android_asset/</string>
-    <string name="user_request_id_prefix">CE-</string>
+    <string name="request_viewer_uri_part_assets">file:///android_asset/</string>
+    <string name="user_request_id_prefix" translatable="false">CE-</string>
     <string name="user_request_status_type_1">In process</string>
     <string name="user_request_status_type_2">Done</string>
     <string name="user_request_status_type_3">Waiting</string>

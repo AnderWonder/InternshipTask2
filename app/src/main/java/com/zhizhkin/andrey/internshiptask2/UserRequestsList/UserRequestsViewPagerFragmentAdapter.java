@@ -1,18 +1,18 @@
-package com.zhizhkin.andrey.internshiptask2.RequestsManager;
+package com.zhizhkin.andrey.internshiptask2.UserRequestsList;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.zhizhkin.andrey.internshiptask2.RequestsManager.Fragments.RequestsFragment;
+import com.zhizhkin.andrey.internshiptask2.UserRequestsList.Fragments.RequestsFragment;
 
 import java.util.List;
 
-public class RequestsMangerViewPagerFragmentAdapter extends FragmentPagerAdapter {
+public class UserRequestsViewPagerFragmentAdapter extends FragmentPagerAdapter {
 
     private List<RequestsFragment> mRequestsFragments;
 
-    public RequestsMangerViewPagerFragmentAdapter(FragmentManager fm, List<RequestsFragment> requestsFragments) {
+    public UserRequestsViewPagerFragmentAdapter(FragmentManager fm, List<RequestsFragment> requestsFragments) {
         super(fm);
         mRequestsFragments = requestsFragments;
     }

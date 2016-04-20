@@ -1,4 +1,4 @@
-package com.zhizhkin.andrey.internshiptask2.RequestViewer;
+package com.zhizhkin.andrey.internshiptask2.UserRequestViewer;
 
 import android.content.Context;
 import android.content.res.Resources;

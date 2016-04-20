@@ -21,7 +21,7 @@ public class TestDataGenerator {
         Resources resources = InternshipTask2Application.getContext().getResources();
         List<UserRequest> requests = new ArrayList<>();
         for (UserRequest.StatusType status : UserRequest.StatusType.values()) {
-            for (int i = 0; i <= amount; i++) {
+            for (int i = 0; i < amount; i++) {
                 requests.add(generateUserRequest(resources, status));
             }
         }

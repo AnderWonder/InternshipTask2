@@ -3,7 +3,7 @@ package com.zhizhkin.andrey.internshiptask2;
 import android.app.Application;
 import android.content.Context;
 
-import com.zhizhkin.andrey.internshiptask2.Model.RequestsManager;
+import com.zhizhkin.andrey.internshiptask2.Model.UserRequestsManager;
 
 public class InternshipTask2Application extends Application {
 
@@ -13,7 +13,7 @@ public class InternshipTask2Application extends Application {
     public void onCreate() {
         super.onCreate();
         mContext = this;
-        RequestsManager.initInstance();
+        UserRequestsManager.initInstance();
     }
 
     public static Context getContext(){
