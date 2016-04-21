@@ -21,7 +21,7 @@ class RecyclerViewPicassoUriAdapter extends RecyclerView.Adapter<RecyclerViewPic
 
     private int mImageWidth;
 
-    private RequestViewerActivity mActivity;
+    private UserRequestViewerActivity mActivity;
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
@@ -35,7 +35,7 @@ class RecyclerViewPicassoUriAdapter extends RecyclerView.Adapter<RecyclerViewPic
 
     }
 
-    public RecyclerViewPicassoUriAdapter(List<Uri> UriList, RequestViewerActivity activity) {
+    public RecyclerViewPicassoUriAdapter(List<Uri> UriList, UserRequestViewerActivity activity) {
         mUriList = UriList;
         mActivity = activity;
     }

@@ -11,16 +11,16 @@ import com.zhizhkin.andrey.internshiptask2.Model.UserRequest;
 
 import java.util.List;
 
-public class RequestsRecyclerViewAdapter extends RecyclerView.Adapter<RequestsRecyclerViewAdapter.ViewHolder> {
+public class UserRequestsRecyclerViewAdapter extends RecyclerView.Adapter<UserRequestsRecyclerViewAdapter.ViewHolder> {
 
     private List<UserRequest> mUserRequests;
 
-    public RequestsRecyclerViewAdapter(List<UserRequest> userRequests) {
+    public UserRequestsRecyclerViewAdapter(List<UserRequest> userRequests) {
         mUserRequests = userRequests;
     }
 
     @Override
-    public RequestsRecyclerViewAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public UserRequestsRecyclerViewAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.requests_manager_item, parent, false));
     }
 

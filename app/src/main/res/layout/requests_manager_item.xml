@@ -4,8 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="126dp"
-    app:cardCornerRadius="16dp"
-    app:cardUseCompatPadding="true">
+    app:cardCornerRadius="6dp"
+    app:cardUseCompatPadding="true"
+    android:layout_marginTop="8dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,28 +17,31 @@
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_margin="16dp">
+            android:layout_height="match_parent">
 
             <ImageView
                 android:id="@+id/requestTypeImageView"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:scaleType="fitCenter"
-                tools:src="@drawable/ic_request_type_doc" />
+                android:layout_marginTop="21dp"
+                android:src="@drawable/ic_doc" />
 
             <TextView
                 android:id="@+id/requestLikesTextView"
-                android:layout_width="wrap_content"
+                android:layout_width="43dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:layout_gravity="center_horizontal"
                 android:drawableLeft="@drawable/ic_like"
-                android:drawablePadding="8dp"
                 android:gravity="center"
-                tools:text="2" />
+                tools:text="2"
+                android:layout_marginRight="18dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="17dp"
+                android:drawablePadding="8dp" />
 
         </RelativeLayout>
 
@@ -45,43 +51,51 @@
             android:layout_height="match_parent"
             android:background="@color/colorDivider" />
 
-        <RelativeLayout
+        <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="16dp">
+            android:orientation="vertical"
+            android:layout_margin="16dp"
+            android:baselineAligned="false">
 
             <TextView
                 android:id="@+id/requestTypeTextView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                tools:text="Демонтаж інших об’єктів, що входять до переліку малого будивництва" />
+                android:layout_height="40dp"
+                tools:text="Демонтаж інших об’єктів, що входять до переліку малого будивництва"
+                style="@style/Base.TextAppearance.AppCompat.Subhead"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/requestAddressTextView"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/requestTypeTextView"
                 android:ellipsize="end"
                 android:maxLines="1"
                 tools:text="Вул. Вадима Гетьмана, 42" />
 
-            <TextView
-                android:id="@+id/requestSolveDateTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                tools:text="Кві 26, 2016" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="bottom">
 
-            <TextView
-                android:id="@+id/requestDaysLeftTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                tools:text="- 14 днів" />
-        </RelativeLayout>
+                <TextView
+                    android:id="@+id/requestSolveDateTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Кві 26, 2016"
+                    android:textStyle="bold"
+                   />
+
+                <TextView
+                    android:id="@+id/requestDaysLeftTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="- 14 днів"
+                    android:layout_alignParentRight="true"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+        </LinearLayout>
     </LinearLayout>
 </android.support.v7.widget.CardView>

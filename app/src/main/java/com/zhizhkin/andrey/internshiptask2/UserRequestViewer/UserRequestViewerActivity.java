@@ -16,7 +16,7 @@ import com.zhizhkin.andrey.internshiptask2.R;
 import com.zhizhkin.andrey.internshiptask2.Model.UserRequestsManager;
 import com.zhizhkin.andrey.internshiptask2.Model.UserRequestViewBinder;
 
-public class RequestViewerActivity extends AppCompatActivity implements View.OnClickListener {
+public class UserRequestViewerActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

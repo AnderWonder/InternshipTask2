@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.zhizhkin.andrey.internshiptask2">
-
     <application
         android:name=".InternshipTask2Application"
         android:allowBackup="true"
@@ -12,7 +11,8 @@
         <activity
             android:name=".UserRequestsList.UserRequestsListActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/UserRequestsListActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,11 +20,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".UserRequestViewer.RequestViewerActivity"
+            android:name=".UserRequestViewer.UserRequestViewerActivity"
             android:label="@string/request_viewer_request_id"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:parentActivityName=".UserRequestsList.UserRequestsListActivity">
-
+            android:theme="@style/RequestViewerActivity"
+            android:parentActivityName=".UserRequestsList.UserRequestsListActivity"
+            android:screenOrientation="portrait">
         </activity>
     </application>
 

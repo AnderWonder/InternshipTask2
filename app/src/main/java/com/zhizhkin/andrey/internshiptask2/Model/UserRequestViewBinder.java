@@ -7,7 +7,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.zhizhkin.andrey.internshiptask2.R;
-import com.zhizhkin.andrey.internshiptask2.UserRequestViewer.RequestViewerActivity;
+import com.zhizhkin.andrey.internshiptask2.UserRequestViewer.UserRequestViewerActivity;
 import com.zhizhkin.andrey.internshiptask2.UserRequestsList.UserRequestsListActivity;
 
 import static android.text.format.DateFormat.*;
@@ -20,13 +20,13 @@ public class UserRequestViewBinder {
         sViewGroup = viewGroup;
         Context context = viewGroup.getContext();
         setTextToTextView(R.id.requestStatusTextView, userRequest.getStatus().toString());
-        setTextToTextView(R.id.requestInfoTextView, userRequest.getRequestInfo());
+        setTextToTextView(R.id.requestInfoTextView, userRequest.getRequestInfo()+" "+userRequest.getAddress());
         setTextToTextView(R.id.requestAddressTextView, userRequest.getAddress());
         setTextToTextView(R.id.requestLikesTextView, String.valueOf(userRequest.getLikes()));
         setTextToTextView(R.id.requestCreationDateTextView, getMediumDateFormat(context).format(userRequest.getDateCreated()));
         setTextToTextView(R.id.requestRegistrationDateTextView, getMediumDateFormat(context).format(userRequest.getRegistrationDate()));
         setTextToTextView(R.id.requestSolveDateTextView, getMediumDateFormat(context).format(userRequest.getDateToSolve()));
-        setTextToTextView(R.id.requestDaysLeftTextView, String.valueOf(userRequest.getDaysLeft()));
+        setTextToTextView(R.id.requestDaysLeftTextView, String.valueOf(userRequest.getDaysLeft())+context.getString(R.string.days_left_suffix));
         setTextToTextView(R.id.requestTypeTextView, userRequest.getType().toString());
         setTextToTextView(R.id.requestResponsibleNameTextView, userRequest.getResponsible());
         ImageView bindImageView = (ImageView) sViewGroup.findViewById(R.id.requestTypeImageView);
@@ -42,6 +42,6 @@ public class UserRequestViewBinder {
     public static void startRequestViewerActivity(UserRequest request, View v) {
         UserRequestsManager.getInstance().setCurrent(request);
         UserRequestsListActivity act = ((UserRequestsListActivity) v.getContext());
-        act.startActivity(new Intent(act, RequestViewerActivity.class));
+        act.startActivity(new Intent(act, UserRequestViewerActivity.class));
     }
 }

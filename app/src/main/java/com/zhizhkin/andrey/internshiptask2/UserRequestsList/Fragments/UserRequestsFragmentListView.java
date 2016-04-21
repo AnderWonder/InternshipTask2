@@ -8,13 +8,11 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.melnykov.fab.FloatingActionButton;
-
 import com.zhizhkin.andrey.internshiptask2.R;
 import com.zhizhkin.andrey.internshiptask2.Model.UserRequestViewBinder;
 import com.zhizhkin.andrey.internshiptask2.Model.UserRequest;
 
-public class RequestsFragmentListView extends RequestsFragment {
+public class UserRequestsFragmentListView extends UserRequestsFragment implements AdapterView.OnItemClickListener{
 
     @Override
     public View onCreateView(LayoutInflater inflater, final ViewGroup container,
@@ -31,18 +29,16 @@ public class RequestsFragmentListView extends RequestsFragment {
                 }
                 UserRequestViewBinder.Bind(itemView, mUserRequests.get(position));
                 return itemView;
-
             }
 
         });
-        requestsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                UserRequestViewBinder.startRequestViewerActivity(mUserRequests.get(position), view);
-            }
-        });
-        ((FloatingActionButton) fragmentView.findViewById(R.id.fab)).attachToListView(requestsListView);
+        requestsListView.setOnItemClickListener(this);
+        initFab(fragmentView).attachToListView(requestsListView);
         return fragmentView;
     }
 
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        UserRequestViewBinder.startRequestViewerActivity(mUserRequests.get(position), view);
+    }
 }

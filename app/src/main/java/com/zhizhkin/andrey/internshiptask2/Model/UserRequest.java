@@ -119,10 +119,10 @@ public class UserRequest {
     }
 
     public enum RequestType {
-        TYPE1(R.string.user_request_type_1, R.drawable.ic_menu_camera),
-        TYPE2(R.string.user_request_type_2, R.drawable.ic_menu_gallery),
-        TYPE3(R.string.user_request_type_3, R.drawable.ic_menu_manage),
-        TYPE4(R.string.user_request_type_4, R.drawable.ic_menu_share);
+        TYPE1(R.string.user_request_type_1, R.drawable.ic_doc),
+        TYPE2(R.string.user_request_type_2, R.drawable.ic_trash),
+        TYPE3(R.string.user_request_type_3, R.drawable.ic_chart),
+        TYPE4(R.string.user_request_type_4, R.drawable.ic_elevator);
 
         private String mName;
         private int mTypeStringResourceId;

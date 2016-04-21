@@ -4,31 +4,31 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.zhizhkin.andrey.internshiptask2.UserRequestsList.Fragments.RequestsFragment;
+import com.zhizhkin.andrey.internshiptask2.UserRequestsList.Fragments.UserRequestsFragment;
 
 import java.util.List;
 
 public class UserRequestsViewPagerFragmentAdapter extends FragmentPagerAdapter {
 
-    private List<RequestsFragment> mRequestsFragments;
+    private List<UserRequestsFragment> mUserRequestsFragments;
 
-    public UserRequestsViewPagerFragmentAdapter(FragmentManager fm, List<RequestsFragment> requestsFragments) {
+    public UserRequestsViewPagerFragmentAdapter(FragmentManager fm, List<UserRequestsFragment> userRequestsFragments) {
         super(fm);
-        mRequestsFragments = requestsFragments;
+        mUserRequestsFragments = userRequestsFragments;
     }
 
     @Override
     public Fragment getItem(int position) {
-        return mRequestsFragments.get(position);
+        return mUserRequestsFragments.get(position);
     }
 
     @Override
     public int getCount() {
-        return mRequestsFragments.size();
+        return mUserRequestsFragments.size();
     }
 
     @Override
     public CharSequence getPageTitle(int position) {
-        return mRequestsFragments.get(position).getTitle();
+        return mUserRequestsFragments.get(position).getTitle();
     }
 }

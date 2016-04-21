@@ -25,10 +25,12 @@
     <string name="user_request_status_type_1">In process</string>
     <string name="user_request_status_type_2">Done</string>
     <string name="user_request_status_type_3">Waiting</string>
-    <string name="user_request_type_1">Демонтаж інших об’єктів, що входять до переліку мал... in</string>
+    <string name="user_request_type_1">Демонтаж інших об’єктів, що входять до переліку малих будівельних форм</string>
     <string name="user_request_type_2">Прибирання та санітарній стан території</string>
-    <string name="user_request_type_3">Питання стосовно нарахування боргу електрое...</string>
+    <string name="user_request_type_3">Питання стосовно нарахування боргу електроенергії</string>
     <string name="user_request_type_4">Ремонт та обслуговування ліфтів</string>
+    <string name="days_left_suffix">" днів"</string>
+    <string name="menu_item_filter">Filter</string>
 
     <string-array name="streets_array">
         <item>вул. Вадима Гетьмана</item>
@@ -40,11 +42,11 @@
     </string-array>
 
     <string-array name="requests_info">
-        <item>Opened hatch (near a sandwich-board), district of turn 18 and 19 streetcars on Mira ave. from the Donetsk highway</item>
-        <item>Не работает уличное освещение</item>
-        <item>Не работает чего-то там из-за того что никто ничего не делает</item>
-        <item>Необходимо срочно исправить недоработки</item>
-        <item>Дыра на дороге которую невозможно объехать</item>
+        <item>Opened hatch (near a sandwich-board), district of turn 18 and 19 streetcars on Mira ave. from the Donetsk highway.</item>
+        <item>Не работает уличное освещение.</item>
+        <item>Не работает чего-то там из-за того что никто ничего не делает.</item>
+        <item>Необходимо срочно исправить недоработки.</item>
+        <item>Дыра на дороге которую невозможно объехать.</item>
     </string-array>
 
     <string-array name="responcibles">
