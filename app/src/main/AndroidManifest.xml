@@ -10,8 +10,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".UserRequestsList.UserRequestsListActivity"
-            android:label="@string/app_name"
-            android:theme="@style/UserRequestsListActivity"
+            android:theme="@style/AppTheme.NoActionBar.Translucent"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,8 +20,7 @@
         </activity>
         <activity
             android:name=".UserRequestViewer.UserRequestViewerActivity"
-            android:label="@string/request_viewer_request_id"
-            android:theme="@style/RequestViewerActivity"
+            android:theme="@style/AppTheme.NoActionBar"
             android:parentActivityName=".UserRequestsList.UserRequestsListActivity"
             android:screenOrientation="portrait">
         </activity>

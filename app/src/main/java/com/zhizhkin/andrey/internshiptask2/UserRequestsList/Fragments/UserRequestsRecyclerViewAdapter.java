@@ -21,7 +21,7 @@ public class UserRequestsRecyclerViewAdapter extends RecyclerView.Adapter<UserRe
 
     @Override
     public UserRequestsRecyclerViewAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.requests_manager_item, parent, false));
+        return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.user_requests_list_item, parent, false));
     }
 
     @Override

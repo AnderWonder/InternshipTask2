@@ -19,4 +19,13 @@ public class InternshipTask2Application extends Application {
     public static Context getContext(){
         return mContext;
     }
+
+    public static int getStatusBarHeight() {
+        int result = 0;
+        int resourceId = mContext.getResources().getIdentifier("status_bar_height", "dimen", "android");
+        if (resourceId > 0)
+            result = mContext.getResources().getDimensionPixelSize(resourceId);
+        return result;
+    }
+
 }

@@ -1,12 +1,5 @@
 <resources>
-    <string name="app_name">Всі звернення</string>
-
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
+    <string name="app_name">InternshipTask2</string>
     <string name="request_viewer_request_type">Communal services</string>
     <string name="request_viewer_request_id" translatable="false">CE-1257218</string>
     <string name="request_viewer_request_created">Created</string>
@@ -31,6 +24,7 @@
     <string name="user_request_type_4">Ремонт та обслуговування ліфтів</string>
     <string name="days_left_suffix">" днів"</string>
     <string name="menu_item_filter">Filter</string>
+    <string name="user_requests_list_filter_status_default">All requests</string>
 
     <string-array name="streets_array">
         <item>вул. Вадима Гетьмана</item>

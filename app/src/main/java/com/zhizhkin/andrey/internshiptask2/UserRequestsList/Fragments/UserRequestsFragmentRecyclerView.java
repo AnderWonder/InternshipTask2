@@ -14,7 +14,7 @@ public class UserRequestsFragmentRecyclerView extends UserRequestsFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View fragmentView = inflater.inflate(R.layout.requests_manager_fragment_recyclerview, container, false);
+        View fragmentView = inflater.inflate(R.layout.user_requests_list_fragment_recyclerview, container, false);
         RecyclerView requestsRecyclerView = (RecyclerView) fragmentView.findViewById(R.id.requestsManagerRecyclerView);
         requestsRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         requestsRecyclerView.setAdapter(new UserRequestsRecyclerViewAdapter(mUserRequests));

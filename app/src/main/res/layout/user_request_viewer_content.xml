@@ -7,9 +7,9 @@
     android:layout_height="match_parent"
     android:focusableInTouchMode="true"
     android:orientation="vertical"
-    android:paddingLeft="@dimen/request_viewer_activity_horizontal_margin"
-    android:paddingRight="@dimen/request_viewer_activity_horizontal_margin"
-    android:paddingTop="@dimen/request_viewer_activity_vertical_margin"
+    android:paddingLeft="@dimen/user_request_viewer_activity_horizontal_margin"
+    android:paddingRight="@dimen/user_request_viewer_activity_horizontal_margin"
+    android:paddingTop="@dimen/user_request_viewer_activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".UserRequestViewer.UserRequestViewerActivity">
 
@@ -34,8 +34,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="@string/request_viewer_request_type"
-                    android:layout_toLeftOf="@+id/requestStatusTextView" />
+                    android:layout_toLeftOf="@+id/requestStatusTextView"
+                    android:text="@string/request_viewer_request_type" />
 
                 <TextView
                     android:id="@+id/requestStatusTextView"
@@ -44,25 +44,25 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:background="@drawable/request_viewer_bg_oval"
-                    android:paddingBottom="@dimen/request_viewer_status_vertical_padding"
-                    android:paddingLeft="@dimen/request_viewer_status_horizontal_padding"
-                    android:paddingRight="@dimen/request_viewer_status_horizontal_padding"
-                    android:paddingTop="@dimen/request_viewer_status_vertical_padding"
+                    android:background="@drawable/user_request_viewer_bg_oval"
+                    android:paddingBottom="@dimen/user_request_viewer_status_vertical_padding"
+                    android:paddingLeft="@dimen/user_request_viewer_status_horizontal_padding"
+                    android:paddingRight="@dimen/user_request_viewer_status_horizontal_padding"
+                    android:paddingTop="@dimen/user_request_viewer_status_vertical_padding"
                     android:text="@string/request_viewer_request_status" />
             </RelativeLayout>
 
             <TextView
                 android:id="@+id/dividerTextView1"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/request_viewer_text_view_divider_height"
-                android:layout_marginTop="@dimen/request_viewer_first_text_view_divider_margin_top"
+                android:layout_height="@dimen/user_request_viewer_text_view_divider_height"
+                android:layout_marginTop="@dimen/user_request_viewer_first_text_view_divider_margin_top"
                 android:background="@color/material_grey_400" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/request_viewer_text_views_margin_top">
+                android:layout_marginTop="@dimen/user_request_viewer_text_views_margin_top">
 
                 <TextView
                     android:id="@+id/requestCreatedTextView"
@@ -83,14 +83,14 @@
             <TextView
                 android:id="@+id/dividerTextView2"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/request_viewer_text_view_divider_height"
-                android:layout_marginTop="@dimen/request_viewer_text_view_divider_margin_top"
+                android:layout_height="@dimen/user_request_viewer_text_view_divider_height"
+                android:layout_marginTop="@dimen/user_request_viewer_text_view_divider_margin_top"
                 android:background="@color/material_grey_400" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/request_viewer_text_views_margin_top">
+                android:layout_marginTop="@dimen/user_request_viewer_text_views_margin_top">
 
                 <TextView
                     android:id="@+id/requestRegisteredTextView"
@@ -111,14 +111,14 @@
             <TextView
                 android:id="@+id/dividerTextView3"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/request_viewer_text_view_divider_height"
-                android:layout_marginTop="@dimen/request_viewer_text_view_divider_margin_top"
+                android:layout_height="@dimen/user_request_viewer_text_view_divider_height"
+                android:layout_marginTop="@dimen/user_request_viewer_text_view_divider_margin_top"
                 android:background="@color/material_grey_400" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/request_viewer_text_views_margin_top">
+                android:layout_marginTop="@dimen/user_request_viewer_text_views_margin_top">
 
                 <TextView
                     android:id="@+id/requestSolveTextView"
@@ -139,14 +139,14 @@
             <TextView
                 android:id="@+id/dividerTextView4"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/request_viewer_text_view_divider_height"
-                android:layout_marginTop="@dimen/request_viewer_text_view_divider_margin_top"
+                android:layout_height="@dimen/user_request_viewer_text_view_divider_height"
+                android:layout_marginTop="@dimen/user_request_viewer_text_view_divider_margin_top"
                 android:background="@color/material_grey_400" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/request_viewer_text_views_margin_top">
+                android:layout_marginTop="@dimen/user_request_viewer_text_views_margin_top">
 
                 <TextView
                     android:id="@+id/requestResponsibleTextView"
@@ -168,8 +168,8 @@
             <TextView
                 android:id="@+id/dividerTextView5"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/request_viewer_text_view_divider_height"
-                android:layout_marginTop="@dimen/request_viewer_text_view_divider_margin_top"
+                android:layout_height="@dimen/user_request_viewer_text_view_divider_height"
+                android:layout_marginTop="@dimen/user_request_viewer_text_view_divider_margin_top"
                 android:background="@color/material_grey_400" />
 
             <TextView
@@ -177,17 +177,16 @@
                 style="@style/TextAppearance.AppCompat.Subhead"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/request_viewer_description_margin_top"
+                android:layout_marginTop="@dimen/user_request_viewer_description_margin_top"
                 android:text="@string/request_viewer_request_description" />
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/requestDescriptionRecyclerView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/request_viewer_description_margin_top"
-                android:layout_marginTop="@dimen/request_viewer_description_margin_top"
-                tools:listitem="@layout/request_viewer_image_item"
-                />
+                android:layout_marginBottom="@dimen/user_request_viewer_description_margin_top"
+                android:layout_marginTop="@dimen/user_request_viewer_description_margin_top"
+                tools:listitem="@layout/user_request_viewer_image_item" />
 
         </LinearLayout>
 

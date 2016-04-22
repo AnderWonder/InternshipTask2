@@ -4,10 +4,10 @@
         <shape>
             <solid android:color="@color/color_orange"/>
             <corners
-                android:topLeftRadius="@dimen/request_viewer_radius"
-                android:topRightRadius="@dimen/request_viewer_radius"
-                android:bottomLeftRadius="@dimen/request_viewer_radius"
-                android:bottomRightRadius="@dimen/request_viewer_radius"
+                android:topLeftRadius="@dimen/user_request_viewer_radius"
+                android:topRightRadius="@dimen/user_request_viewer_radius"
+                android:bottomLeftRadius="@dimen/user_request_viewer_radius"
+                android:bottomRightRadius="@dimen/user_request_viewer_radius"
                 />
         </shape>
     </item>

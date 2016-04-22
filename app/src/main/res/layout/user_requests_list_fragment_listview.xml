@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/requestsManagerListView"
-        tools:listitem="@layout/requests_manager_item"
+        tools:listitem="@layout/user_requests_list_item"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:paddingTop="8dp"
@@ -17,5 +17,5 @@
         android:dividerHeight="8dp"
         />
     <include
-        layout="@layout/requests_manager_fab"/>
+        layout="@layout/user_requests_list_fab"/>
 </android.support.design.widget.CoordinatorLayout>

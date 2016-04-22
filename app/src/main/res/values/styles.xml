@@ -1,7 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimary">@color/off_blue_two</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
@@ -12,12 +12,13 @@
         <item name="android:divider">@color/colorDivider</item>
     </style>
 
-    <style name="UserRequestsListActivity" parent="@style/AppTheme.NoActionBar">
-        <item name="colorPrimary">@color/off_blue_two</item>
+    <style name="AppTheme.NoActionBar.Translucent" parent="@style/AppTheme.NoActionBar">
     </style>
 
-    <style name="RequestViewerActivity" parent="@style/AppTheme.NoActionBar">
-        <item name="colorPrimary">@color/off_blue_two</item>
+    <style name="UserRequestsListActivity" parent="@style/AppTheme.NoActionBar">
+    </style>
+
+    <style name="UserRequestViewerActivity" parent="@style/AppTheme.NoActionBar">
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

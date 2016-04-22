@@ -45,12 +45,12 @@ class RecyclerViewPicassoUriAdapter extends RecyclerView.Adapter<RecyclerViewPic
         Context context = parent.getContext();
         Resources resources = context.getResources();
         DisplayMetrics displayMetrics = resources.getDisplayMetrics();
-        mImageWidth = (int) (displayMetrics.widthPixels - resources.getDimension(R.dimen.request_viewer_activity_horizontal_margin) * 2);
-        if (resources.getInteger(R.integer.request_viewer_pictures_per_screen) != 0)
-            mImageWidth /= resources.getInteger(R.integer.request_viewer_pictures_per_screen);
-        mImageWidth -= resources.getDimension(R.dimen.request_viewer_image_item_margin_right);
+        mImageWidth = (int) (displayMetrics.widthPixels - resources.getDimension(R.dimen.user_request_viewer_activity_horizontal_margin) * 2);
+        if (resources.getInteger(R.integer.user_request_viewer_pictures_per_screen) != 0)
+            mImageWidth /= resources.getInteger(R.integer.user_request_viewer_pictures_per_screen);
+        mImageWidth -= resources.getDimension(R.dimen.user_request_viewer_image_item_margin_right);
 
-        return new ViewHolder(LayoutInflater.from(context).inflate(R.layout.request_viewer_image_item, parent, false), this);
+        return new ViewHolder(LayoutInflater.from(context).inflate(R.layout.user_request_viewer_image_item, parent, false), this);
     }
 
     @Override

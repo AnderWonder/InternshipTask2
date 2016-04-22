@@ -14,7 +14,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 
+import com.zhizhkin.andrey.internshiptask2.InternshipTask2Application;
 import com.zhizhkin.andrey.internshiptask2.R;
 import com.zhizhkin.andrey.internshiptask2.UserRequestsList.Fragments.UserRequestsFragment;
 import com.zhizhkin.andrey.internshiptask2.UserRequestsList.Fragments.UserRequestsFragmentListView;
@@ -30,28 +33,26 @@ public class UserRequestsListActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.requests_manager_main);
+        setTitle(getString(R.string.user_requests_list_filter_status_default));
+        setContentView(R.layout.user_requests_list_activity);
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
-        //Shift for Translucent theme (Lollipop+ only)
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            AppBarLayout.LayoutParams clp = (AppBarLayout.LayoutParams)toolbar.getLayoutParams();
-            clp.setMargins(0,getStatusBarHeight(),0,0);
-            toolbar.setLayoutParams(clp);
-        }
         setSupportActionBar(toolbar);
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
         ab.setHomeAsUpIndicator(R.drawable.ic_menu);
-        ((NavigationView) findViewById(R.id.nav_view)).setNavigationItemSelectedListener(this);
+        NavigationView navView = (NavigationView) findViewById(R.id.nav_view);
+        navView.setNavigationItemSelectedListener(this);
         initViewPager();
-    }
-
-    public int getStatusBarHeight() {
-        int result = 0;
-        int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
-        if (resourceId > 0)
-            result = getResources().getDimensionPixelSize(resourceId);
-        return result;
+        //Shift for Translucent theme (Lollipop+ only)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            AppBarLayout.LayoutParams clp = (AppBarLayout.LayoutParams)toolbar.getLayoutParams();
+            clp.setMargins(0, InternshipTask2Application.getStatusBarHeight(),0,0);
+            toolbar.setLayoutParams(clp);
+            FrameLayout frl = (FrameLayout) navView.getHeaderView(0);
+            LinearLayout.LayoutParams frlp = (LinearLayout.LayoutParams) frl.getLayoutParams();
+            frlp.setMargins(0, InternshipTask2Application.getStatusBarHeight(), 0, 0);
+            frl.setLayoutParams(frlp);
+        }
     }
 
     private void initViewPager() {

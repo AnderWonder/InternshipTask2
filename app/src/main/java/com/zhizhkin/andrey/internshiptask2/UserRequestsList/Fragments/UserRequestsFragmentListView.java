@@ -17,15 +17,15 @@ public class UserRequestsFragmentListView extends UserRequestsFragment implement
     @Override
     public View onCreateView(LayoutInflater inflater, final ViewGroup container,
                              Bundle savedInstanceState) {
-        View fragmentView = inflater.inflate(R.layout.requests_manager_fragment_listview, container, false);
+        View fragmentView = inflater.inflate(R.layout.user_requests_list_fragment_listview, container, false);
         ListView requestsListView = (ListView) fragmentView.findViewById(R.id.requestsManagerListView);
-        requestsListView.setAdapter(new ArrayAdapter<UserRequest>(this.getContext(), R.layout.requests_manager_item, mUserRequests) {
+        requestsListView.setAdapter(new ArrayAdapter<UserRequest>(this.getContext(), R.layout.user_requests_list_item, mUserRequests) {
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
                 View itemView = convertView;
                 if (itemView == null) {
                     itemView = LayoutInflater.from(parent.getContext())
-                            .inflate(R.layout.requests_manager_item, parent, false);
+                            .inflate(R.layout.user_requests_list_item, parent, false);
                 }
                 UserRequestViewBinder.Bind(itemView, mUserRequests.get(position));
                 return itemView;

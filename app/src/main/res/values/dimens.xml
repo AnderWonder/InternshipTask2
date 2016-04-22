@@ -1,26 +1,18 @@
 <resources>
     <!-- UserRequestsList part-->
-
-    <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="nav_header_vertical_spacing">16dp</dimen>
     <dimen name="nav_header_height">76dp</dimen>
-    <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="fab_margin">24dp</dimen>
 
-    <!-- RequestViewer part-->
-    <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="request_viewer_activity_horizontal_margin">16dp</dimen>
-    <dimen name="request_viewer_activity_vertical_margin">16dp</dimen>
-
-    <dimen name="request_viewer_radius">15dp</dimen>
-    <dimen name="request_viewer_status_vertical_padding">5dp</dimen>
-    <dimen name="request_viewer_status_horizontal_padding">15dp</dimen>
-    <dimen name="request_viewer_text_view_divider_height">1dp</dimen>
-    <dimen name="request_viewer_first_text_view_divider_margin_top">10dp</dimen>
-    <dimen name="request_viewer_text_view_divider_margin_top">10dp</dimen>
-    <dimen name="request_viewer_text_views_margin_top">10dp</dimen>
-    <dimen name="request_viewer_description_margin_top">10dp</dimen>
-    <dimen name="request_viewer_image_item_margin_right">5dp</dimen>
+    <!-- UserRequestViewer part-->
+    <dimen name="user_request_viewer_activity_horizontal_margin">16dp</dimen>
+    <dimen name="user_request_viewer_activity_vertical_margin">16dp</dimen>
+    <dimen name="user_request_viewer_radius">15dp</dimen>
+    <dimen name="user_request_viewer_status_vertical_padding">5dp</dimen>
+    <dimen name="user_request_viewer_status_horizontal_padding">15dp</dimen>
+    <dimen name="user_request_viewer_text_view_divider_height">1dp</dimen>
+    <dimen name="user_request_viewer_first_text_view_divider_margin_top">10dp</dimen>
+    <dimen name="user_request_viewer_text_view_divider_margin_top">10dp</dimen>
+    <dimen name="user_request_viewer_text_views_margin_top">10dp</dimen>
+    <dimen name="user_request_viewer_description_margin_top">10dp</dimen>
+    <dimen name="user_request_viewer_image_item_margin_right">5dp</dimen>
 </resources>
