@@ -27,7 +27,7 @@ public class UserRequestViewerActivity extends AppCompatActivity implements View
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         UserRequest userRequest = UserRequestsManager.getInstance().getCurrent();
-        UserRequestViewBinder.Bind(findViewById(R.id.requestViewerScrollView),userRequest);
+        UserRequestViewBinder.Bind(findViewById(R.id.requestViewerScrollView), userRequest);
         setTitle(userRequest.getId());
 
         createRecyclerView(new RecyclerViewPicassoUriAdapter(userRequest.getPictures(), this));

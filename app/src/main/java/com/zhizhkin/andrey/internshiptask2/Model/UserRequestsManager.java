@@ -14,7 +14,7 @@ public class UserRequestsManager {
     }
 
     public static UserRequestsManager getInstance() {
-        if(sUserRequestsManager ==null)initInstance();
+        if (sUserRequestsManager == null) initInstance();
         return sUserRequestsManager;
     }
 

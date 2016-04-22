@@ -12,7 +12,7 @@ import com.zhizhkin.andrey.internshiptask2.R;
 import com.zhizhkin.andrey.internshiptask2.Model.UserRequestViewBinder;
 import com.zhizhkin.andrey.internshiptask2.Model.UserRequest;
 
-public class UserRequestsFragmentListView extends UserRequestsFragment implements AdapterView.OnItemClickListener{
+public class UserRequestsFragmentListView extends UserRequestsFragment implements AdapterView.OnItemClickListener {
 
     @Override
     public View onCreateView(LayoutInflater inflater, final ViewGroup container,

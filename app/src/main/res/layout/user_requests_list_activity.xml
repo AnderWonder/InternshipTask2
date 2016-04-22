@@ -40,7 +40,7 @@
             android:id="@+id/requestsManagerViewPager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/user_requests_list_view_pager_background"
+            android:background="@drawable/user_requests_list_view_pager_bg"
             app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
         <com.melnykov.fab.FloatingActionButton xmlns:android="http://schemas.android.com/apk/res/android"
@@ -51,10 +51,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
             android:layout_margin="@dimen/fab_margin"
+            android:fitsSystemWindows="false"
             android:src="@drawable/ic_fab_plus"
-            fab:fab_colorNormal="@color/color_orange"
             app:layout_anchorGravity="bottom|right|end"
-            android:fitsSystemWindows="false"/>
+            fab:fab_colorNormal="@color/color_orange" />
 
     </android.support.design.widget.CoordinatorLayout>
 
@@ -66,7 +66,6 @@
         android:layout_gravity="start"
         android:background="@color/nav_menu"
         app:headerLayout="@layout/user_requests_list_nav_header"
-        app:menu="@menu/user_requests_list_nav">
-    </android.support.design.widget.NavigationView>
+        app:menu="@menu/user_requests_list_nav"></android.support.design.widget.NavigationView>
 
 </android.support.v4.widget.DrawerLayout>

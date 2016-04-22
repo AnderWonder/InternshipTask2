@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/action_settings"
-        android:orderInCategory="100"
         android:icon="@drawable/ic_filter_menu"
-        app:showAsAction="always"
-        android:title="@string/menu_item_filter" />
+        android:orderInCategory="100"
+        android:title="@string/menu_item_filter"
+        app:showAsAction="always" />
 </menu>

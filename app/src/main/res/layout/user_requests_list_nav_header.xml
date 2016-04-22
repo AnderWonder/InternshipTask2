@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="@dimen/nav_header_height"
-    android:background="@color/off_blue_two"
-    >
+    android:background="@color/off_blue_two">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:text="e-contact"
-        android:textSize="@dimen/nav_menu_header_text_size"
-        android:textStyle="bold"
         android:layout_marginLeft="@dimen/nav_menu_header_margin_left"
-        android:textColor="@color/nav_header_text"/>
+        android:text="@string/nav_header_text"
+        android:textColor="@color/nav_header_text"
+        android:textSize="@dimen/nav_menu_header_text_size"
+        android:textStyle="bold" />
 
 </FrameLayout>

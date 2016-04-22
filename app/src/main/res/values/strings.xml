@@ -11,7 +11,7 @@
     <string name="request_viewer_request_solve_date">25 лютого 2016</string>
     <string name="request_viewer_responsible_name">Дніпропетровський МВК()</string>
     <string name="request_viewer_pictures_assets_folder" translatable="false">"pictures"</string>
-    <string name="request_viewer_uri_part_assets">file:///android_asset/</string>
+    <string name="request_viewer_uri_part_assets" translatable="false">file:///android_asset/</string>
     <string name="user_request_id_prefix" translatable="false">CE-</string>
     <string name="user_request_status_type_1">В роботі</string>
     <string name="user_request_status_type_2">Виконано</string>
@@ -30,27 +30,28 @@
     <string name="user_request_item_address">Вул. Вадима Гетьмана, 42</string>
     <string name="user_request_item_date">Кві 26, 2016</string>
     <string name="user_request_item_left_days">- 14 днів</string>
+    <string name="nav_header_text">e-contact</string>
 
     <string-array name="streets_array">
         <item>вул. Вадима Гетьмана</item>
         <item>пр. Б.Хмельницького</item>
-        <item>вул. Инженерна</item>
+        <item>вул. Інженерна</item>
         <item>вул. Космічна</item>
-        <item>Запорожьске шоссе</item>
+        <item>Запорожське шосе</item>
         <item>пр. Тітова</item>
     </string-array>
 
     <string-array name="requests_info">
-        <item>Opened hatch (near a sandwich-board), district of turn 18 and 19 streetcars on Mira ave. from the Donetsk highway.</item>
-        <item>Не работает уличное освещение.</item>
-        <item>Не работает чего-то там из-за того что никто ничего не делает.</item>
-        <item>Необходимо срочно исправить недоработки.</item>
-        <item>Дыра на дороге которую невозможно объехать.</item>
+        <item>Відкритий люк (біля рекламного щита)</item>
+        <item>Не працює освітлення</item>
+        <item>Щось там не працює через те що нікто нічого не робить</item>
+        <item>Потрібно негайно виправити недоліки</item>
+        <item>Яма на дорозі котру не можна об\'їхати</item>
     </string-array>
 
     <string-array name="responcibles">
         <item>Дніпропетровський МВК()</item>
-        <item>РЭС</item>
+        <item>РЕС</item>
     </string-array>
 
 </resources>

@@ -17,7 +17,7 @@ public class InternshipTask2Application extends Application {
         UserRequestsManager.initInstance();
     }
 
-    public static Context getContext(){
+    public static Context getContext() {
         return mContext;
     }
 
@@ -30,8 +30,8 @@ public class InternshipTask2Application extends Application {
         return result;
     }
 
-    public static int getNavigationBarHeight(){
-        int result=0;
+    public static int getNavigationBarHeight() {
+        int result = 0;
         Resources resources = mContext.getResources();
         int resourceId = resources.getIdentifier("navigation_bar_height", "dimen", "android");
         if (resourceId > 0)

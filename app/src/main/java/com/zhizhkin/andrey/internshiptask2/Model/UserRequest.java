@@ -11,7 +11,7 @@ import java.util.List;
 
 public class UserRequest {
 
-    public static final int MILLIS_IN_DAY = 1000 * 60 * 60 * 24;
+    private static final int MILLIS_IN_DAY = 1000 * 60 * 60 * 24;
     private RequestType mType;
     private StatusType mStatus;
     private int mLikes;
@@ -124,7 +124,6 @@ public class UserRequest {
         TYPE3(R.string.user_request_type_3, R.drawable.ic_chart),
         TYPE4(R.string.user_request_type_4, R.drawable.ic_elevator);
 
-        private String mName;
         private int mTypeStringResourceId;
         private int mIcId;
 

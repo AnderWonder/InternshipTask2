@@ -12,14 +12,11 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 
 import com.melnykov.fab.FloatingActionButton;
 
@@ -43,7 +40,7 @@ public class UserRequestsListActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setTitle(getString(R.string.user_requests_list_filter_status_default));
         setContentView(R.layout.user_requests_list_activity);
-        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
@@ -55,18 +52,18 @@ public class UserRequestsListActivity extends AppCompatActivity
         //Shift is necessary for Translucent theme in KitKat+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             //AppBar
-            int statusBarHeight=InternshipTask2Application.getStatusBarHeight();
-            AppBarLayout.LayoutParams clp = ((AppBarLayout.LayoutParams)toolbar.getLayoutParams());
-            clp.setMargins(0,statusBarHeight,0,0);
+            int statusBarHeight = InternshipTask2Application.getStatusBarHeight();
+            AppBarLayout.LayoutParams clp = ((AppBarLayout.LayoutParams) toolbar.getLayoutParams());
+            clp.setMargins(0, statusBarHeight, 0, 0);
             toolbar.setLayoutParams(clp);
             //NavView
             FrameLayout frl = (FrameLayout) navView.getHeaderView(0);
             LinearLayout.LayoutParams frlp = (LinearLayout.LayoutParams) frl.getLayoutParams();
-            frlp.setMargins(0,statusBarHeight, 0, 0);
+            frlp.setMargins(0, statusBarHeight, 0, 0);
             frl.setLayoutParams(frlp);
             //FAB
             CoordinatorLayout.LayoutParams llp = (CoordinatorLayout.LayoutParams) mFab.getLayoutParams();
-            int fabMargin = (int)getResources().getDimension(R.dimen.fab_margin);
+            int fabMargin = (int) getResources().getDimension(R.dimen.fab_margin);
             llp.setMargins(0, 0, fabMargin, fabMargin + InternshipTask2Application.getNavigationBarHeight());
             mFab.setLayoutParams(llp);
         }
@@ -80,7 +77,7 @@ public class UserRequestsListActivity extends AppCompatActivity
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.requestsManagerViewPager);
         viewPager.setAdapter(new UserRequestsViewPagerFragmentAdapter(getSupportFragmentManager(), pages));
-        ((TabLayout)findViewById(R.id.requestsManagerTabLayout)).setupWithViewPager(viewPager);
+        ((TabLayout) findViewById(R.id.requestsManagerTabLayout)).setupWithViewPager(viewPager);
     }
 
     private UserRequestsFragment createPage(UserRequest.StatusType status, UserRequestsFragment fragment) {
@@ -110,7 +107,7 @@ public class UserRequestsListActivity extends AppCompatActivity
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                ((DrawerLayout)findViewById(R.id.drawer_layout)).openDrawer(GravityCompat.START);
+                ((DrawerLayout) findViewById(R.id.drawer_layout)).openDrawer(GravityCompat.START);
                 return true;
         }
         return super.onOptionsItemSelected(item);

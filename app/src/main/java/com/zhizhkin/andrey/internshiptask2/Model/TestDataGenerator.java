@@ -15,7 +15,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
-public class TestDataGenerator {
+class TestDataGenerator {
 
     public static List<UserRequest> generateTestData(int amount) {
         Resources resources = InternshipTask2Application.getContext().getResources();

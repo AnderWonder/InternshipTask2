@@ -13,7 +13,7 @@ public class UserRequestsFragment extends Fragment {
 
     protected List<UserRequest> mUserRequests;
 
-    protected String mTitle;
+    private String mTitle;
 
     protected FloatingActionButton mFab;
 
