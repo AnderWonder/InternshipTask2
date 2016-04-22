@@ -6,7 +6,7 @@
     android:layout_height="126dp"
     android:layout_marginLeft="@dimen/requests_list_item_margin"
     android:layout_marginRight="@dimen/requests_list_item_margin"
-    android:layout_marginTop="@dimen/requests_list_item_margin"
+    android:layout_marginBottom="@dimen/requests_list_item_margin"
     android:background="@drawable/user_requests_list_item_bg"
     android:orientation="horizontal">
 
