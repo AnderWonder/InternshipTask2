@@ -25,6 +25,9 @@
     <string name="days_left_suffix">" днів"</string>
     <string name="menu_item_filter">Filter</string>
     <string name="user_requests_list_filter_status_default">All requests</string>
+    <string name="nav_menu_item_1">Всі звернення</string>
+    <string name="nav_menu_item_2">Звернення на мапі</string>
+    <string name="nav_menu_item_3">Увійти в аккаунт</string>
 
     <string-array name="streets_array">
         <item>вул. Вадима Гетьмана</item>

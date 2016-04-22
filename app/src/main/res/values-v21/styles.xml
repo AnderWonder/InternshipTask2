@@ -8,8 +8,4 @@
         <item name="android:statusBarColor">@color/status_bar_color</item>
     </style>
 
-    <style name="AppTheme.NoActionBar.Translucent" parent="@style/AppTheme.NoActionBar">
-        <item name="android:windowTranslucentNavigation">true</item>
-    </style>
-
 </resources>

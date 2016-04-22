@@ -11,6 +11,4 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:listitem="@layout/user_requests_list_item"/>
-    <include
-        layout="@layout/user_requests_list_fab"/>
 </android.support.design.widget.CoordinatorLayout>

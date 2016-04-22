@@ -5,11 +5,11 @@
     <color name="colorAccent">#FF4081</color>
     <color name="colorDivider">#C6C6C6</color>
     <color name="color_orange">#FF9C26</color>
-    <color name="material_grey_400">#bdbdbd</color>
     <color name="status_bar_color">#45648a</color>
     <color name="off_blue_two">#557cac</color>
     <color name="greeny_blue">#45b3c3</color>
     <color name="nav_header_text">#b0ffffff</color>
     <color name="faded_blue">#6786b9</color>
     <color name="nav_menu">#fafafa</color>
+    <color name="nav_item_color">#b0df3434</color>
 </resources>

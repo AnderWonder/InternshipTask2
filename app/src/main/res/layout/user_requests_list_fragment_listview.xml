@@ -16,6 +16,4 @@
         android:divider="@android:color/transparent"
         android:dividerHeight="8dp"
         />
-    <include
-        layout="@layout/user_requests_list_fab"/>
 </android.support.design.widget.CoordinatorLayout>

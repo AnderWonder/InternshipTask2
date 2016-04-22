@@ -33,7 +33,7 @@ public class UserRequestsFragmentListView extends UserRequestsFragment implement
 
         });
         requestsListView.setOnItemClickListener(this);
-        initFab(fragmentView).attachToListView(requestsListView);
+        mFab.attachToListView(requestsListView);
         return fragmentView;
     }
 

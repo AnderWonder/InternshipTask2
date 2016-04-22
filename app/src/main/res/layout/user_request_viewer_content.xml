@@ -57,7 +57,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/user_request_viewer_text_view_divider_height"
                 android:layout_marginTop="@dimen/user_request_viewer_first_text_view_divider_margin_top"
-                android:background="@color/material_grey_400" />
+                android:background="@color/colorDivider" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -85,7 +85,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/user_request_viewer_text_view_divider_height"
                 android:layout_marginTop="@dimen/user_request_viewer_text_view_divider_margin_top"
-                android:background="@color/material_grey_400" />
+                android:background="@color/colorDivider" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -113,7 +113,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/user_request_viewer_text_view_divider_height"
                 android:layout_marginTop="@dimen/user_request_viewer_text_view_divider_margin_top"
-                android:background="@color/material_grey_400" />
+                android:background="@color/colorDivider" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -141,7 +141,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/user_request_viewer_text_view_divider_height"
                 android:layout_marginTop="@dimen/user_request_viewer_text_view_divider_margin_top"
-                android:background="@color/material_grey_400" />
+                android:background="@color/colorDivider" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -170,7 +170,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/user_request_viewer_text_view_divider_height"
                 android:layout_marginTop="@dimen/user_request_viewer_text_view_divider_margin_top"
-                android:background="@color/material_grey_400" />
+                android:background="@color/colorDivider" />
 
             <TextView
                 android:id="@+id/requestInfoTextView"

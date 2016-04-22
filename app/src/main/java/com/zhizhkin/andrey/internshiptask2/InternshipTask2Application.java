@@ -2,6 +2,7 @@ package com.zhizhkin.andrey.internshiptask2;
 
 import android.app.Application;
 import android.content.Context;
+import android.content.res.Resources;
 
 import com.zhizhkin.andrey.internshiptask2.Model.UserRequestsManager;
 
@@ -22,9 +23,19 @@ public class InternshipTask2Application extends Application {
 
     public static int getStatusBarHeight() {
         int result = 0;
-        int resourceId = mContext.getResources().getIdentifier("status_bar_height", "dimen", "android");
+        Resources resources = mContext.getResources();
+        int resourceId = resources.getIdentifier("status_bar_height", "dimen", "android");
         if (resourceId > 0)
-            result = mContext.getResources().getDimensionPixelSize(resourceId);
+            result = resources.getDimensionPixelSize(resourceId);
+        return result;
+    }
+
+    public static int getNavigationBarHeight(){
+        int result=0;
+        Resources resources = mContext.getResources();
+        int resourceId = resources.getIdentifier("navigation_bar_height", "dimen", "android");
+        if (resourceId > 0)
+            result = resources.getDimensionPixelSize(resourceId);
         return result;
     }
 

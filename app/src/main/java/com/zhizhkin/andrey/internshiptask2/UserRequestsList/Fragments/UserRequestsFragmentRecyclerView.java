@@ -18,7 +18,7 @@ public class UserRequestsFragmentRecyclerView extends UserRequestsFragment {
         RecyclerView requestsRecyclerView = (RecyclerView) fragmentView.findViewById(R.id.requestsManagerRecyclerView);
         requestsRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         requestsRecyclerView.setAdapter(new UserRequestsRecyclerViewAdapter(mUserRequests));
-        initFab(fragmentView).attachToRecyclerView(requestsRecyclerView);
+        mFab.attachToRecyclerView(requestsRecyclerView);
         return fragmentView;
     }
 

@@ -1,8 +1,6 @@
 package com.zhizhkin.andrey.internshiptask2.UserRequestViewer;
 
-import android.os.Build;
 import android.os.Bundle;
-import android.support.design.widget.AppBarLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -13,7 +11,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.zhizhkin.andrey.internshiptask2.InternshipTask2Application;
 import com.zhizhkin.andrey.internshiptask2.Model.UserRequest;
 import com.zhizhkin.andrey.internshiptask2.R;
 import com.zhizhkin.andrey.internshiptask2.Model.UserRequestsManager;
