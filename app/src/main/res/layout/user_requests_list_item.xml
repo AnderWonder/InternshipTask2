@@ -1,95 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="126dp"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_marginLeft="8dp"
-    android:layout_marginRight="8dp"
-    android:layout_marginTop="8dp"
-    android:orientation="horizontal"
-    android:background="@drawable/user_requests_list_item_bg">
+    android:layout_marginLeft="@dimen/requests_list_item_margin"
+    android:layout_marginRight="@dimen/requests_list_item_margin"
+    android:layout_marginTop="@dimen/requests_list_item_margin"
+    android:background="@drawable/user_requests_list_item_bg"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/requestTypeImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/request_type_icon_margin_top"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_doc" />
+
+        <TextView
+            android:id="@+id/requestLikesTextView"
+            android:layout_width="@dimen/user_request_item_text_view1_width"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/user_request_item_text_view1_margin_bottom"
+            android:layout_marginLeft="@dimen/user_request_item_text_view1_margin_left"
+            android:layout_marginRight="@dimen/user_request_item_text_view1_margin_right"
+            android:drawableLeft="@drawable/ic_like"
+            android:drawablePadding="@dimen/user_request_item_text_view1_padding"
+            android:gravity="center"
+            tools:text="@string/user_request_likes_number" />
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/verticalDivider"
+        android:layout_width="@dimen/user_request_viewer_text_view_divider_height"
+        android:layout_height="match_parent"
+        android:background="@color/colorDivider" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/user_request_item_llayout_margin"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/requestTypeTextView"
+            style="@style/Base.TextAppearance.AppCompat.Subhead"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/user_request_item_type_height"
+            android:textStyle="bold"
+            tools:text="@string/user_request_type_1" />
+
+        <TextView
+            android:id="@+id/requestAddressTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="@string/user_request_item_address" />
 
         <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent">
-
-            <ImageView
-                android:id="@+id/requestTypeImageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="21dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/ic_doc" />
-
-            <TextView
-                android:id="@+id/requestLikesTextView"
-                tools:text="2"
-                android:layout_width="43dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="17dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="18dp"
-                android:drawableLeft="@drawable/ic_like"
-                android:drawablePadding="8dp"
-                android:gravity="center" />
-
-        </RelativeLayout>
-
-        <View
-            android:id="@+id/verticalDivider"
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:background="@color/colorDivider" />
-
-        <LinearLayout
-            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="16dp"
-            android:baselineAligned="false"
-            android:orientation="vertical">
+            android:gravity="bottom">
 
             <TextView
-                android:id="@+id/requestTypeTextView"
-                style="@style/Base.TextAppearance.AppCompat.Subhead"
-                tools:text="Демонтаж інших об’єктів, що входять до переліку малого будивництва"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/requestAddressTextView"
-                tools:text="Вул. Вадима Гетьмана, 42"
-                android:layout_width="match_parent"
+                android:id="@+id/requestSolveDateTextView"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:maxLines="1" />
+                android:textStyle="bold"
+                tools:text="@string/user_request_item_date" />
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="bottom">
-
-                <TextView
-                    android:id="@+id/requestSolveDateTextView"
-                    tools:text="Кві 26, 2016"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/requestDaysLeftTextView"
-                    tools:text="- 14 днів"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:textStyle="bold" />
-            </RelativeLayout>
-        </LinearLayout>
-
+            <TextView
+                android:id="@+id/requestDaysLeftTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:textStyle="bold"
+                tools:text="@string/user_request_item_left_days" />
+        </RelativeLayout>
     </LinearLayout>
+
+</LinearLayout>

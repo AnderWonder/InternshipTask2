@@ -1,33 +1,35 @@
 <resources>
     <string name="app_name">InternshipTask2</string>
-    <string name="request_viewer_request_type">Communal services</string>
     <string name="request_viewer_request_id" translatable="false">CE-1257218</string>
-    <string name="request_viewer_request_created">Created</string>
-    <string name="request_viewer_request_registered">Registered</string>
-    <string name="request_viewer_solve_until">Must be solved by</string>
-    <string name="request_viewer_request_responsible">Responsible</string>
-    <string name="request_viewer_request_description">Opened hatch (near a sandwich-board), district of turn 18 and 19 streetcars on Mira ave. from the Donetsk highway</string>
-    <string name="request_viewer_request_creation_date">February 25, 2016</string>
-    <string name="request_viewer_request_registration_date">February 26, 2016</string>
-    <string name="request_viewer_request_solve_date">February 29, 2016</string>
-    <string name="request_viewer_responsible_name">Dnipropetrovs\'k MVK()</string>
-    <string name="request_viewer_request_status" translatable="false">In process</string>
+    <string name="request_viewer_request_created">Створено</string>
+    <string name="request_viewer_request_registered">Зареєстровано</string>
+    <string name="request_viewer_solve_until">Вирішити до</string>
+    <string name="request_viewer_request_responsible">Відповидальний</string>
+    <string name="request_viewer_request_description">Відкритий люк (біля рекламного щита), район повороту 18 і 19 трамваїв на проспект Мира з Донецького шосе</string>
+    <string name="request_viewer_request_creation_date">26 лютого 2016</string>
+    <string name="request_viewer_request_registration_date">29 лютого 2016</string>
+    <string name="request_viewer_request_solve_date">25 лютого 2016</string>
+    <string name="request_viewer_responsible_name">Дніпропетровський МВК()</string>
     <string name="request_viewer_pictures_assets_folder" translatable="false">"pictures"</string>
     <string name="request_viewer_uri_part_assets">file:///android_asset/</string>
     <string name="user_request_id_prefix" translatable="false">CE-</string>
-    <string name="user_request_status_type_1">In process</string>
-    <string name="user_request_status_type_2">Done</string>
-    <string name="user_request_status_type_3">Waiting</string>
+    <string name="user_request_status_type_1">В роботі</string>
+    <string name="user_request_status_type_2">Виконано</string>
+    <string name="user_request_status_type_3">Очікує</string>
     <string name="user_request_type_1">Демонтаж інших об’єктів, що входять до переліку малих будівельних форм</string>
     <string name="user_request_type_2">Прибирання та санітарній стан території</string>
     <string name="user_request_type_3">Питання стосовно нарахування боргу електроенергії</string>
     <string name="user_request_type_4">Ремонт та обслуговування ліфтів</string>
     <string name="days_left_suffix">" днів"</string>
     <string name="menu_item_filter">Filter</string>
-    <string name="user_requests_list_filter_status_default">All requests</string>
+    <string name="user_requests_list_filter_status_default">Всі звернення</string>
     <string name="nav_menu_item_1">Всі звернення</string>
     <string name="nav_menu_item_2">Звернення на мапі</string>
     <string name="nav_menu_item_3">Увійти в аккаунт</string>
+    <string name="user_request_likes_number">2</string>
+    <string name="user_request_item_address">Вул. Вадима Гетьмана, 42</string>
+    <string name="user_request_item_date">Кві 26, 2016</string>
+    <string name="user_request_item_left_days">- 14 днів</string>
 
     <string-array name="streets_array">
         <item>вул. Вадима Гетьмана</item>
@@ -47,7 +49,7 @@
     </string-array>
 
     <string-array name="responcibles">
-        <item>Dnipropetrovs\'k MVK()</item>
+        <item>Дніпропетровський МВК()</item>
         <item>РЭС</item>
     </string-array>
 

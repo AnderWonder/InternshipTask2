@@ -2,6 +2,7 @@ package com.zhizhkin.andrey.internshiptask2.Model;
 
 import android.content.Context;
 import android.content.Intent;
+import android.text.format.DateFormat;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -9,6 +10,8 @@ import android.widget.TextView;
 import com.zhizhkin.andrey.internshiptask2.R;
 import com.zhizhkin.andrey.internshiptask2.UserRequestViewer.UserRequestViewerActivity;
 import com.zhizhkin.andrey.internshiptask2.UserRequestsList.UserRequestsListActivity;
+
+import java.util.Locale;
 
 import static android.text.format.DateFormat.*;
 
@@ -19,13 +22,14 @@ public class UserRequestViewBinder {
     public static void Bind(View viewGroup, UserRequest userRequest) {
         sViewGroup = viewGroup;
         Context context = viewGroup.getContext();
+        java.text.DateFormat dateFormat= java.text.DateFormat.getDateInstance(java.text.DateFormat.MEDIUM, new Locale("uk","UA"));
         setTextToTextView(R.id.requestStatusTextView, userRequest.getStatus().toString());
         setTextToTextView(R.id.requestInfoTextView, userRequest.getRequestInfo()+" "+userRequest.getAddress());
         setTextToTextView(R.id.requestAddressTextView, userRequest.getAddress());
         setTextToTextView(R.id.requestLikesTextView, String.valueOf(userRequest.getLikes()));
-        setTextToTextView(R.id.requestCreationDateTextView, getMediumDateFormat(context).format(userRequest.getDateCreated()));
-        setTextToTextView(R.id.requestRegistrationDateTextView, getMediumDateFormat(context).format(userRequest.getRegistrationDate()));
-        setTextToTextView(R.id.requestSolveDateTextView, getMediumDateFormat(context).format(userRequest.getDateToSolve()));
+        setTextToTextView(R.id.requestCreationDateTextView, dateFormat.format(userRequest.getDateCreated()));
+        setTextToTextView(R.id.requestRegistrationDateTextView, dateFormat.format(userRequest.getRegistrationDate()));
+        setTextToTextView(R.id.requestSolveDateTextView, dateFormat.format(userRequest.getDateToSolve()));
         setTextToTextView(R.id.requestDaysLeftTextView, String.valueOf(userRequest.getDaysLeft())+context.getString(R.string.days_left_suffix));
         setTextToTextView(R.id.requestTypeTextView, userRequest.getType().toString());
         setTextToTextView(R.id.requestResponsibleNameTextView, userRequest.getResponsible());

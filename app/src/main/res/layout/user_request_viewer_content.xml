@@ -35,7 +35,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_toLeftOf="@+id/requestStatusTextView"
-                    android:text="@string/request_viewer_request_type" />
+                    android:text="@string/user_request_type_1" />
 
                 <TextView
                     android:id="@+id/requestStatusTextView"
@@ -49,7 +49,7 @@
                     android:paddingLeft="@dimen/user_request_viewer_status_horizontal_padding"
                     android:paddingRight="@dimen/user_request_viewer_status_horizontal_padding"
                     android:paddingTop="@dimen/user_request_viewer_status_vertical_padding"
-                    android:text="@string/request_viewer_request_status" />
+                    android:text="@string/user_request_status_type_1" />
             </RelativeLayout>
 
             <TextView

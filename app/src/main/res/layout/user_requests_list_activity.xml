@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:theme="@style/AppTheme.AppBarOverlay"
-            app:elevation="0dp">
+            app:elevation="@dimen/app_bar_elevation">
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
@@ -61,7 +61,7 @@
 
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_view"
-        android:layout_width="304dp"
+        android:layout_width="@dimen/nav_width"
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:background="@color/nav_menu"

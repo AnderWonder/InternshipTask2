@@ -11,9 +11,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:text="e-contact"
-        android:textSize="24dp"
+        android:textSize="@dimen/nav_menu_header_text_size"
         android:textStyle="bold"
-        android:layout_marginLeft="16dp"
+        android:layout_marginLeft="@dimen/nav_menu_header_margin_left"
         android:textColor="@color/nav_header_text"/>
 
 </FrameLayout>

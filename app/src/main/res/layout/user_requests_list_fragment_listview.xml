@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:layout_height="match_parent">
 
     <ListView
+        android:id="@+id/requestsManagerListView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/requestsManagerListView"
-        tools:listitem="@layout/user_requests_list_item"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:paddingTop="8dp"
+        android:layout_marginLeft="@dimen/user_requests_listview_margin"
+        android:layout_marginRight="@dimen/user_requests_listview_margin"
         android:divider="@android:color/transparent"
-        android:dividerHeight="8dp"
-        />
+        android:dividerHeight="@dimen/user_requests_listview_margin"
+        android:paddingTop="@dimen/user_requests_listview_margin"
+        tools:listitem="@layout/user_requests_list_item" />
 </android.support.design.widget.CoordinatorLayout>

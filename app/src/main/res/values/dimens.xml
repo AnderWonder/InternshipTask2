@@ -15,4 +15,18 @@
     <dimen name="user_request_viewer_text_views_margin_top">10dp</dimen>
     <dimen name="user_request_viewer_description_margin_top">10dp</dimen>
     <dimen name="user_request_viewer_image_item_margin_right">5dp</dimen>
+    <dimen name="app_bar_elevation">0dp</dimen>
+    <dimen name="nav_width">304dp</dimen>
+    <dimen name="nav_menu_header_text_size">24dp</dimen>
+    <dimen name="nav_menu_header_margin_left">16dp</dimen>
+    <dimen name="requests_list_item_margin">8dp</dimen>
+    <dimen name="request_type_icon_margin_top">21dp</dimen>
+    <dimen name="user_request_item_text_view1_width">43dp</dimen>
+    <dimen name="user_request_item_text_view1_margin_bottom">17dp</dimen>
+    <dimen name="user_request_item_text_view1_margin_left">20dp</dimen>
+    <dimen name="user_request_item_text_view1_margin_right">18dp</dimen>
+    <dimen name="user_request_item_text_view1_padding">8dp</dimen>
+    <dimen name="user_request_item_llayout_margin">16dp</dimen>
+    <dimen name="user_request_item_type_height">40dp</dimen>
+    <dimen name="user_requests_listview_margin">8dp</dimen>
 </resources>
