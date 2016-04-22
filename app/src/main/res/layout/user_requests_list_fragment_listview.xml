@@ -12,6 +12,6 @@
         android:layout_marginRight="@dimen/user_requests_listview_margin"
         android:divider="@android:color/transparent"
         android:dividerHeight="@dimen/user_requests_listview_margin"
-        android:paddingTop="@dimen/user_requests_listview_margin"
+        android:paddingBottom="@dimen/user_requests_listview_margin"
         tools:listitem="@layout/user_requests_list_item"/>
 </android.support.design.widget.CoordinatorLayout>
