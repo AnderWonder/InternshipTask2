@@ -36,14 +36,14 @@ public class UserRequestsListActivity extends AppCompatActivity
     private FloatingActionButton mFab;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) { //[Comment] onCreate is too large
         super.onCreate(savedInstanceState);
         setTitle(getString(R.string.user_requests_list_filter_status_default));
         setContentView(R.layout.user_requests_list_activity);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ActionBar ab = getSupportActionBar();
-        ab.setDisplayHomeAsUpEnabled(true);
+        ab.setDisplayHomeAsUpEnabled(true); //[Comment] May reproduce NPE
         ab.setHomeAsUpIndicator(R.drawable.ic_menu);
         NavigationView navView = (NavigationView) findViewById(R.id.nav_view);
         navView.setNavigationItemSelectedListener(this);
@@ -53,12 +53,12 @@ public class UserRequestsListActivity extends AppCompatActivity
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             //AppBar
             int statusBarHeight = InternshipTask2Application.getStatusBarHeight();
-            AppBarLayout.LayoutParams clp = ((AppBarLayout.LayoutParams) toolbar.getLayoutParams());
+            AppBarLayout.LayoutParams clp = ((AppBarLayout.LayoutParams) toolbar.getLayoutParams()); //[Comment] What's slp???
             clp.setMargins(0, statusBarHeight, 0, 0);
             toolbar.setLayoutParams(clp);
             //NavView
             FrameLayout frl = (FrameLayout) navView.getHeaderView(0);
-            LinearLayout.LayoutParams frlp = (LinearLayout.LayoutParams) frl.getLayoutParams();
+            LinearLayout.LayoutParams frlp = (LinearLayout.LayoutParams) frl.getLayoutParams(); //[Comment] BAD BAD names frpl ????
             frlp.setMargins(0, statusBarHeight, 0, 0);
             frl.setLayoutParams(frlp);
             //FAB

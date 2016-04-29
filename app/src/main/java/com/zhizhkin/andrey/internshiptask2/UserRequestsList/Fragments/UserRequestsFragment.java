@@ -9,7 +9,7 @@ import com.zhizhkin.andrey.internshiptask2.Model.UserRequest;
 
 import java.util.List;
 
-public class UserRequestsFragment extends Fragment {
+public class UserRequestsFragment extends Fragment { //[Comment] Unnecessary Fragment
 
     protected List<UserRequest> mUserRequests;
 
@@ -33,7 +33,7 @@ public class UserRequestsFragment extends Fragment {
         mTitle = title;
     }
 
-    public void setFab(FloatingActionButton mFab) {
+    public void setFab(FloatingActionButton mFab) { //[Comment] Wrong argument name
         this.mFab = mFab;
-    }
+    } //[Comment] Fragment should not know about fab
 }

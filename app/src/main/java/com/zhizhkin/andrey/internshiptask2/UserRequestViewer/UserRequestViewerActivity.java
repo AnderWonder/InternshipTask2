@@ -35,7 +35,7 @@ public class UserRequestViewerActivity extends AppCompatActivity implements View
     }
 
     private void createRecyclerView(RecyclerView.Adapter adapter) {
-        RecyclerView mRecyclerView;
+        RecyclerView mRecyclerView; //[Comment] BAD BAD. Make this in one row.
         mRecyclerView = (RecyclerView) findViewById(R.id.requestDescriptionRecyclerView);
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
@@ -43,7 +43,7 @@ public class UserRequestViewerActivity extends AppCompatActivity implements View
     }
 
     private void setToastsToTextViewsInLayout(ViewGroup VG) {
-        int childcount = VG.getChildCount();
+        int childcount = VG.getChildCount(); //[Comment] Use camel case
         for (int i = 0; i < childcount; i++) {
             View v = VG.getChildAt(i);
             if (v instanceof TextView) v.setOnClickListener(this);

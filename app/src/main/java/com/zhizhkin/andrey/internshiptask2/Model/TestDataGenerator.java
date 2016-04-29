@@ -1,4 +1,4 @@
-package com.zhizhkin.andrey.internshiptask2.Model;
+package com.zhizhkin.andrey.internshiptask2.Model; //[Comment] Don't use upper-case in package names
 
 import android.content.res.Resources;
 import android.net.Uri;

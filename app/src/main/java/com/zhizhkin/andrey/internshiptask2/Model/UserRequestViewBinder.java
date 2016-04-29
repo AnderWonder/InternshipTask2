@@ -13,11 +13,11 @@ import com.zhizhkin.andrey.internshiptask2.UserRequestsList.UserRequestsListActi
 import java.util.Locale;
 
 
-public class UserRequestViewBinder {
+public class UserRequestViewBinder { //[Comment] Bad pattern, use data binding or butterknife
 
     private static View sViewGroup;
 
-    public static void Bind(View viewGroup, UserRequest userRequest) {
+    public static void Bind(View viewGroup, UserRequest userRequest) { //[Comment] NEVER use such method names
         sViewGroup = viewGroup;
         Context context = viewGroup.getContext();
         java.text.DateFormat dateFormat = java.text.DateFormat.getDateInstance(java.text.DateFormat.MEDIUM, new Locale("uk", "UA"));

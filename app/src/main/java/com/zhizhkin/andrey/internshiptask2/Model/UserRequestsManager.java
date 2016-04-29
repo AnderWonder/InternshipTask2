@@ -5,7 +5,7 @@ import java.util.List;
 
 public class UserRequestsManager {
     private static UserRequestsManager sUserRequestsManager;
-    private static List<UserRequest> sUserRequests;
+    private static List<UserRequest> sUserRequests; //[Comment] Should not be static
     private UserRequest mCurrentRequest;
 
     public static void initInstance() {
