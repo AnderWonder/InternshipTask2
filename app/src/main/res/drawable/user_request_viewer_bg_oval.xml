@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
         <shape>
             <solid android:color="@color/color_orange" />
             <corners android:bottomLeftRadius="@dimen/user_request_viewer_radius" android:bottomRightRadius="@dimen/user_request_viewer_radius" android:topLeftRadius="@dimen/user_request_viewer_radius" android:topRightRadius="@dimen/user_request_viewer_radius" />

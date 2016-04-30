@@ -1,4 +1,4 @@
-package com.zhizhkin.andrey.internshiptask2.Model;
+package com.zhizhkin.andrey.internshiptask2.model;
 
 import android.content.res.Resources;
 import android.net.Uri;
@@ -40,8 +40,8 @@ class TestDataGenerator {
         newUserRequest.setAddress(streetsArray[random.nextInt(streetsArray.length)] + ", " + (1 + random.nextInt(150)));
         String[] requestInfoArray = resources.getStringArray(R.array.requests_info);
         newUserRequest.setRequestInfo(requestInfoArray[random.nextInt(requestInfoArray.length)]);
-        String[] responciblesArray = resources.getStringArray(R.array.responcibles);
-        newUserRequest.setResponsible(responciblesArray[random.nextInt(responciblesArray.length)]);
+        String[] responsiblesArray = resources.getStringArray(R.array.responcibles);
+        newUserRequest.setResponsible(responsiblesArray[random.nextInt(responsiblesArray.length)]);
         Date startDate;
         switch (newUserRequest.getStatus()) {
             case DONE:
@@ -51,8 +51,8 @@ class TestDataGenerator {
                 startDate = getDate("01/04/16");
         }
         newUserRequest.setDateCreated(addRandomDays(startDate, 0, 15));
-        newUserRequest.setRegistrationDate(addRandomDays(newUserRequest.getDateCreated(), 1, 3));
-        newUserRequest.setDateToSolve(addRandomDays(newUserRequest.getRegistrationDate(), 25, 45));
+        newUserRequest.setRegistrationDate(addRandomDays(newUserRequest.getCreationDate(), 1, 3));
+        newUserRequest.setSolveDate(addRandomDays(newUserRequest.getRegistrationDate(), 25, 45));
         return newUserRequest;
     }
 

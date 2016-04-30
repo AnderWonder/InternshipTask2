@@ -1,4 +1,4 @@
-package com.zhizhkin.andrey.internshiptask2.UserRequestViewer;
+package com.zhizhkin.andrey.internshiptask2.userrequestviewer;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -58,7 +58,6 @@ class RecyclerViewPicassoUriAdapter extends RecyclerView.Adapter<RecyclerViewPic
         Picasso.with(holder.mImageView.getContext())
                 .load(mUriList.get(position))
                 .resize(mImageWidth, 0)
-                .onlyScaleDown()
                 .into(holder.mImageView);
     }
 

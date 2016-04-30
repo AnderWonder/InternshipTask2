@@ -1,198 +1,210 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/userRequestViewerBindLayout">
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:focusableInTouchMode="true"
-    android:orientation="vertical"
-    android:paddingLeft="@dimen/user_request_viewer_activity_horizontal_margin"
-    android:paddingRight="@dimen/user_request_viewer_activity_horizontal_margin"
-    android:paddingTop="@dimen/user_request_viewer_activity_vertical_margin"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".UserRequestViewer.UserRequestViewerActivity">
+    <data>
 
-    <ScrollView
-        android:id="@+id/requestViewerScrollView"
+        <variable
+            name="userRequest"
+            type="com.zhizhkin.andrey.internshiptask2.model.UserRequest" />
+    </data>
+
+    <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/user_request_viewer_activity_horizontal_margin"
+        android:paddingRight="@dimen/user_request_viewer_activity_horizontal_margin"
+        android:paddingTop="@dimen/user_request_viewer_activity_vertical_margin"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context=".userrequestviewer.UserRequestViewerActivity">
 
-        <LinearLayout
-            android:id="@+id/linearLayoutInScroll"
+        <ScrollView
+            android:id="@+id/requestViewerScrollView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="wrap_content">
 
-            <RelativeLayout
+            <LinearLayout
+                android:id="@+id/linearLayoutInScroll"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/requestTypeTextView"
-                    style="@style/TextAppearance.AppCompat.Subhead"
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_toLeftOf="@+id/requestStatusTextView"
-                    android:text="@string/user_request_type_1" />
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/requestTypeTextView"
+                        style="@style/TextAppearance.AppCompat.Subhead"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/requestStatusTextView"
+                        android:text="@{userRequest.getType().toString(),default=@string/user_request_type_1}" />
+
+                    <TextView
+                        android:id="@+id/requestStatusTextView"
+                        style="@style/Base.TextAppearance.AppCompat.Inverse"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/user_request_viewer_bg_oval"
+                        android:paddingBottom="@dimen/user_request_viewer_status_vertical_padding"
+                        android:paddingLeft="@dimen/user_request_viewer_status_horizontal_padding"
+                        android:paddingRight="@dimen/user_request_viewer_status_horizontal_padding"
+                        android:paddingTop="@dimen/user_request_viewer_status_vertical_padding"
+                        android:text="@{userRequest.getStatus().toString(),default=@string/user_request_status_type_1}" />
+                </RelativeLayout>
 
                 <TextView
-                    android:id="@+id/requestStatusTextView"
-                    style="@style/Base.TextAppearance.AppCompat.Inverse"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:background="@drawable/user_request_viewer_bg_oval"
-                    android:paddingBottom="@dimen/user_request_viewer_status_vertical_padding"
-                    android:paddingLeft="@dimen/user_request_viewer_status_horizontal_padding"
-                    android:paddingRight="@dimen/user_request_viewer_status_horizontal_padding"
-                    android:paddingTop="@dimen/user_request_viewer_status_vertical_padding"
-                    android:text="@string/user_request_status_type_1" />
-            </RelativeLayout>
+                    android:id="@+id/dividerTextView1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/user_request_viewer_text_view_divider_height"
+                    android:layout_marginTop="@dimen/user_request_viewer_first_text_view_divider_margin_top"
+                    android:background="@color/colorDivider" />
 
-            <TextView
-                android:id="@+id/dividerTextView1"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/user_request_viewer_text_view_divider_height"
-                android:layout_marginTop="@dimen/user_request_viewer_first_text_view_divider_margin_top"
-                android:background="@color/colorDivider" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/user_request_viewer_text_views_margin_top">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/user_request_viewer_text_views_margin_top">
+                    <TextView
+                        android:id="@+id/requestCreatedTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/request_viewer_request_created" />
 
-                <TextView
-                    android:id="@+id/requestCreatedTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/request_viewer_request_created" />
+                    <TextView
+                        android:id="@+id/requestCreationDateTextView"
+                        style="@style/Base.TextAppearance.AppCompat.Body1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:text="@string/request_viewer_request_creation_date"
+                        app:userRequestDate="@{userRequest.getCreationDate()}" />
+                </RelativeLayout>
 
                 <TextView
-                    android:id="@+id/requestCreationDateTextView"
-                    style="@style/Base.TextAppearance.AppCompat.Body1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentTop="true"
-                    android:text="@string/request_viewer_request_creation_date" />
-            </RelativeLayout>
+                    android:id="@+id/dividerTextView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/user_request_viewer_text_view_divider_height"
+                    android:layout_marginTop="@dimen/user_request_viewer_text_view_divider_margin_top"
+                    android:background="@color/colorDivider" />
 
-            <TextView
-                android:id="@+id/dividerTextView2"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/user_request_viewer_text_view_divider_height"
-                android:layout_marginTop="@dimen/user_request_viewer_text_view_divider_margin_top"
-                android:background="@color/colorDivider" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/user_request_viewer_text_views_margin_top">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/user_request_viewer_text_views_margin_top">
+                    <TextView
+                        android:id="@+id/requestRegisteredTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/request_viewer_request_registered" />
 
-                <TextView
-                    android:id="@+id/requestRegisteredTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/request_viewer_request_registered" />
-
-                <TextView
-                    android:id="@+id/requestRegistrationDateTextView"
-                    style="@style/Base.TextAppearance.AppCompat.Body1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentTop="true"
-                    android:text="@string/request_viewer_request_registration_date" />
-            </RelativeLayout>
-
-            <TextView
-                android:id="@+id/dividerTextView3"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/user_request_viewer_text_view_divider_height"
-                android:layout_marginTop="@dimen/user_request_viewer_text_view_divider_margin_top"
-                android:background="@color/colorDivider" />
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/user_request_viewer_text_views_margin_top">
+                    <TextView
+                        android:id="@+id/requestRegistrationDateTextView"
+                        style="@style/Base.TextAppearance.AppCompat.Body1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:text="@string/request_viewer_request_registration_date"
+                        app:userRequestDate="@{userRequest.getRegistrationDate()}" />
+                </RelativeLayout>
 
                 <TextView
-                    android:id="@+id/requestSolveTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/request_viewer_solve_until" />
+                    android:id="@+id/dividerTextView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/user_request_viewer_text_view_divider_height"
+                    android:layout_marginTop="@dimen/user_request_viewer_text_view_divider_margin_top"
+                    android:background="@color/colorDivider" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/user_request_viewer_text_views_margin_top">
+
+                    <TextView
+                        android:id="@+id/requestSolveTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/request_viewer_solve_until" />
+
+                    <TextView
+                        android:id="@+id/requestSolveDateTextView"
+                        style="@style/Base.TextAppearance.AppCompat.Body1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:text="@string/request_viewer_request_solve_date"
+                        app:userRequestDate="@{userRequest.getSolveDate()}" />
+                </RelativeLayout>
 
                 <TextView
-                    android:id="@+id/requestSolveDateTextView"
-                    style="@style/Base.TextAppearance.AppCompat.Body1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentTop="true"
-                    android:text="@string/request_viewer_request_solve_date" />
-            </RelativeLayout>
+                    android:id="@+id/dividerTextView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/user_request_viewer_text_view_divider_height"
+                    android:layout_marginTop="@dimen/user_request_viewer_text_view_divider_margin_top"
+                    android:background="@color/colorDivider" />
 
-            <TextView
-                android:id="@+id/dividerTextView4"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/user_request_viewer_text_view_divider_height"
-                android:layout_marginTop="@dimen/user_request_viewer_text_view_divider_margin_top"
-                android:background="@color/colorDivider" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/user_request_viewer_text_views_margin_top">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/user_request_viewer_text_views_margin_top">
+                    <TextView
+                        android:id="@+id/requestResponsibleTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/request_viewer_request_responsible" />
+
+                    <TextView
+                        android:id="@+id/requestResponsibleNameTextView"
+                        style="@style/Base.TextAppearance.AppCompat.Body1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:text="@{userRequest.getResponsible(),default=@string/request_viewer_responsible_name}" />
+
+                </RelativeLayout>
 
                 <TextView
-                    android:id="@+id/requestResponsibleTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/request_viewer_request_responsible" />
+                    android:id="@+id/dividerTextView5"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/user_request_viewer_text_view_divider_height"
+                    android:layout_marginTop="@dimen/user_request_viewer_text_view_divider_margin_top"
+                    android:background="@color/colorDivider" />
 
                 <TextView
-                    android:id="@+id/requestResponsibleNameTextView"
-                    style="@style/Base.TextAppearance.AppCompat.Body1"
+                    android:id="@+id/requestInfoTextView"
+                    style="@style/TextAppearance.AppCompat.Subhead"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentTop="true"
-                    android:text="@string/request_viewer_responsible_name" />
+                    android:layout_marginTop="@dimen/user_request_viewer_description_margin_top"
+                    android:text="@{userRequest.getRequestInfo,default=@string/request_viewer_request_description}" />
 
-            </RelativeLayout>
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/requestDescriptionRecyclerView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/user_request_viewer_description_margin_top"
+                    android:layout_marginTop="@dimen/user_request_viewer_description_margin_top"
+                    tools:listitem="@layout/user_request_viewer_image_item" />
 
-            <TextView
-                android:id="@+id/dividerTextView5"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/user_request_viewer_text_view_divider_height"
-                android:layout_marginTop="@dimen/user_request_viewer_text_view_divider_margin_top"
-                android:background="@color/colorDivider" />
-
-            <TextView
-                android:id="@+id/requestInfoTextView"
-                style="@style/TextAppearance.AppCompat.Subhead"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/user_request_viewer_description_margin_top"
-                android:text="@string/request_viewer_request_description" />
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/requestDescriptionRecyclerView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/user_request_viewer_description_margin_top"
-                android:layout_marginTop="@dimen/user_request_viewer_description_margin_top"
-                tools:listitem="@layout/user_request_viewer_image_item" />
-
-        </LinearLayout>
+            </LinearLayout>
 
 
-    </ScrollView>
+        </ScrollView>
 
 
-</LinearLayout>
+    </LinearLayout>
 
+</layout>

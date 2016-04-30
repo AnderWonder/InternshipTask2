@@ -4,7 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.content.res.Resources;
 
-import com.zhizhkin.andrey.internshiptask2.Model.UserRequestsManager;
+import com.zhizhkin.andrey.internshiptask2.model.UserRequestsManager;
 
 public class InternshipTask2Application extends Application {
 

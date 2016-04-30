@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.2"
+    buildToolsVersion "23.0.3"
 
     defaultConfig {
         applicationId "com.zhizhkin.andrey.internshiptask2"
@@ -21,6 +21,10 @@ android {
             minifyEnabled false
         }
     }
+    dataBinding {
+        enabled = true
+    }
+
 }
 
 ext {

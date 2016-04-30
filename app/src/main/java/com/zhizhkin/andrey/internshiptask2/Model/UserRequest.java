@@ -1,6 +1,9 @@
-package com.zhizhkin.andrey.internshiptask2.Model;
+package com.zhizhkin.andrey.internshiptask2.model;
 
+import android.databinding.BindingAdapter;
 import android.net.Uri;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.zhizhkin.andrey.internshiptask2.InternshipTask2Application;
 import com.zhizhkin.andrey.internshiptask2.R;
@@ -8,6 +11,9 @@ import com.zhizhkin.andrey.internshiptask2.R;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
+import java.util.Locale;
+
+import static java.text.DateFormat.*;
 
 public class UserRequest {
 
@@ -17,7 +23,7 @@ public class UserRequest {
     private int mLikes;
     private Date mCreationDate;
     private Date mRegistrationDate;
-    private Date mDateToSolve;
+    private Date mSolveDate;
     private String mRequestInfo;
     private String mAddress;
     private String mId;
@@ -48,12 +54,12 @@ public class UserRequest {
         this.mLikes = mLikes;
     }
 
-    public Date getDateCreated() {
+    public Date getCreationDate() {
         return mCreationDate;
     }
 
-    public void setDateCreated(Date mDateCreated) {
-        this.mCreationDate = mDateCreated;
+    public void setDateCreated(Date mCreationDate) {
+        this.mCreationDate = mCreationDate;
     }
 
     public Date getRegistrationDate() {
@@ -64,22 +70,22 @@ public class UserRequest {
         this.mRegistrationDate = mRegistrationDate;
     }
 
-    public Date getDateToSolve() {
-        return mDateToSolve;
+    public Date getSolveDate() {
+        return mSolveDate;
     }
 
-    public void setDateToSolve(Date mDateSolveBy) {
-        this.mDateToSolve = mDateSolveBy;
+    public void setSolveDate(Date mSolveDate) {
+        this.mSolveDate = mSolveDate;
     }
 
     public int getDaysLeft() {
         GregorianCalendar gc = new GregorianCalendar();
-        gc.setTime(mDateToSolve);
-        return (int) ((new GregorianCalendar().getTimeInMillis() - gc.getTimeInMillis()) / MILLIS_IN_DAY);
+        gc.setTime(mSolveDate);
+        return (int) ((System.currentTimeMillis() - gc.getTimeInMillis()) / MILLIS_IN_DAY)+1;
     }
 
     public String getRequestInfo() {
-        return mRequestInfo;
+        return mRequestInfo+" "+getAddress();
     }
 
     public void setRequestInfo(String mRequestInfo) {
@@ -155,6 +161,16 @@ public class UserRequest {
         public String toString() {
             return InternshipTask2Application.getContext().getString(mNameStringResourceId);
         }
+    }
+
+    @BindingAdapter("bind:userRequestTypeIcon")
+    public static void setIcon(ImageView imageView, int iconId) {
+        imageView.setImageResource(iconId);
+    }
+
+    @BindingAdapter("bind:userRequestDate")
+    public static void setSolveDate(TextView textView, Date date) {
+        textView.setText(getDateInstance(MEDIUM, new Locale("uk", "UA")).format(date));
     }
 
 }

@@ -1,10 +1,10 @@
-package com.zhizhkin.andrey.internshiptask2.UserRequestsList;
+package com.zhizhkin.andrey.internshiptask2.userrequestslist;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.zhizhkin.andrey.internshiptask2.UserRequestsList.Fragments.UserRequestsFragment;
+import com.zhizhkin.andrey.internshiptask2.userrequestslist.fragments.UserRequestsFragment;
 
 import java.util.List;
 
@@ -29,6 +29,6 @@ public class UserRequestsViewPagerFragmentAdapter extends FragmentPagerAdapter {
 
     @Override
     public CharSequence getPageTitle(int position) {
-        return mUserRequestsFragments.get(position).getTitle();
+        return mUserRequestsFragments.get(position).getUserRequestsStatusType().toString();
     }
 }

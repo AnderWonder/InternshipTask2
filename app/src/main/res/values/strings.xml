@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">InternshipTask2</string>
-    <string name="request_viewer_request_id" translatable="false">CE-1257218</string>
     <string name="request_viewer_request_created">Створено</string>
     <string name="request_viewer_request_registered">Зареєстровано</string>
     <string name="request_viewer_solve_until">Вирішити до</string>

@@ -1,13 +1,15 @@
-package com.zhizhkin.andrey.internshiptask2.UserRequestsList.Fragments;
+package com.zhizhkin.andrey.internshiptask2.userrequestslist.fragments;
 
+import android.databinding.DataBindingUtil;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.zhizhkin.andrey.internshiptask2.R;
-import com.zhizhkin.andrey.internshiptask2.Model.UserRequestViewBinder;
-import com.zhizhkin.andrey.internshiptask2.Model.UserRequest;
+import com.zhizhkin.andrey.internshiptask2.databinding.UserRequestsListItemBinding;
+import com.zhizhkin.andrey.internshiptask2.model.UserRequest;
+import com.zhizhkin.andrey.internshiptask2.model.UserRequestsManager;
 
 import java.util.List;
 
@@ -26,7 +28,7 @@ public class UserRequestsRecyclerViewAdapter extends RecyclerView.Adapter<UserRe
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        UserRequestViewBinder.Bind(holder.mView, mUserRequests.get(position));
+        ((UserRequestsListItemBinding) DataBindingUtil.bind(holder.mView)).setUserRequest(mUserRequests.get(position));
         holder.setUserRequest(mUserRequests.get(position));
     }
 
@@ -53,7 +55,7 @@ public class UserRequestsRecyclerViewAdapter extends RecyclerView.Adapter<UserRe
 
         @Override
         public void onClick(View v) {
-            UserRequestViewBinder.startRequestViewerActivity(mUserRequest, v);
+            UserRequestsManager.startRequestViewerActivity(mUserRequest, v);
         }
     }
 

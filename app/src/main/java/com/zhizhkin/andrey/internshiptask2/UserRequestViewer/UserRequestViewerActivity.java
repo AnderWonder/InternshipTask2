@@ -1,6 +1,8 @@
-package com.zhizhkin.andrey.internshiptask2.UserRequestViewer;
+package com.zhizhkin.andrey.internshiptask2.userrequestviewer;
 
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -11,10 +13,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.zhizhkin.andrey.internshiptask2.Model.UserRequest;
+import com.zhizhkin.andrey.internshiptask2.databinding.UserRequestViewerContentBinding;
+import com.zhizhkin.andrey.internshiptask2.model.UserRequest;
 import com.zhizhkin.andrey.internshiptask2.R;
-import com.zhizhkin.andrey.internshiptask2.Model.UserRequestsManager;
-import com.zhizhkin.andrey.internshiptask2.Model.UserRequestViewBinder;
+import com.zhizhkin.andrey.internshiptask2.model.UserRequestsManager;
 
 public class UserRequestViewerActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -22,30 +24,31 @@ public class UserRequestViewerActivity extends AppCompatActivity implements View
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user_request_viewer_activity);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        UserRequest userRequest = UserRequestsManager.getInstance().getCurrent();
-        UserRequestViewBinder.Bind(findViewById(R.id.requestViewerScrollView), userRequest);
+        setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) actionBar.setDisplayHomeAsUpEnabled(true);
+
+        UserRequest userRequest = UserRequestsManager.getInstance().getCurrentUserRequest();
         setTitle(userRequest.getId());
+        ((UserRequestViewerContentBinding) DataBindingUtil.bind(findViewById(R.id.userRequestViewerBindLayout))).setUserRequest(userRequest);
 
         createRecyclerView(new RecyclerViewPicassoUriAdapter(userRequest.getPictures(), this));
         setToastsToTextViewsInLayout((LinearLayout) findViewById(R.id.linearLayoutInScroll));
     }
 
     private void createRecyclerView(RecyclerView.Adapter adapter) {
-        RecyclerView mRecyclerView;
-        mRecyclerView = (RecyclerView) findViewById(R.id.requestDescriptionRecyclerView);
-        mRecyclerView.setHasFixedSize(true);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-        mRecyclerView.setAdapter(adapter);
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.requestDescriptionRecyclerView);
+        if (recyclerView != null) {
+            recyclerView.setHasFixedSize(true);
+            recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+            recyclerView.setAdapter(adapter);
+        }
     }
 
-    private void setToastsToTextViewsInLayout(ViewGroup VG) {
-        int childcount = VG.getChildCount();
-        for (int i = 0; i < childcount; i++) {
-            View v = VG.getChildAt(i);
+    private void setToastsToTextViewsInLayout(ViewGroup viewGroup) {
+        for (int i = 0; i < viewGroup.getChildCount(); i++) {
+            View v = viewGroup.getChildAt(i);
             if (v instanceof TextView) v.setOnClickListener(this);
             else if (v instanceof ViewGroup) setToastsToTextViewsInLayout((ViewGroup) v);
         }
