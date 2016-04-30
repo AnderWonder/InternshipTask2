@@ -3,7 +3,7 @@
     <string name="request_viewer_request_created">Створено</string>
     <string name="request_viewer_request_registered">Зареєстровано</string>
     <string name="request_viewer_solve_until">Вирішити до</string>
-    <string name="request_viewer_request_responsible">Відповидальний</string>
+    <string name="request_viewer_request_responsible">Відповідальний</string>
     <string name="request_viewer_request_description">Відкритий люк (біля рекламного щита), район повороту 18 і 19 трамваїв на проспект Мира з Донецького шосе</string>
     <string name="request_viewer_request_creation_date">26 лютого 2016</string>
     <string name="request_viewer_request_registration_date">29 лютого 2016</string>
