@@ -27,6 +27,8 @@ import com.zhizhkin.andrey.internshiptask2.InternshipTask2Application;
 import com.zhizhkin.andrey.internshiptask2.R;
 import com.zhizhkin.andrey.internshiptask2.userrequestslist.fragments.UserRequestsFragment;
 import com.zhizhkin.andrey.internshiptask2.model.UserRequest;
+import com.zhizhkin.andrey.internshiptask2.userrequestslist.fragments.UserRequestsFragmentListView;
+import com.zhizhkin.andrey.internshiptask2.userrequestslist.fragments.UserRequestsFragmentRecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -76,8 +78,9 @@ public class UserRequestsListActivity extends AppCompatActivity
 
     private void initViewPager() {
         List<UserRequestsFragment> pages = new ArrayList<>();
-        for (UserRequest.StatusType statusType : UserRequest.StatusType.values())
-            pages.add(UserRequestsFragment.newInstance(statusType));
+        pages.add(UserRequestsFragmentRecyclerView.newInstance(UserRequest.StatusType.IN_PROCESS));
+        pages.add(UserRequestsFragmentRecyclerView.newInstance(UserRequest.StatusType.DONE));
+        pages.add(UserRequestsFragmentListView.newInstance(UserRequest.StatusType.WAITING));
         ViewPager viewPager = (ViewPager) findViewById(R.id.userRequestsListViewPager);
         if (viewPager != null) {
             viewPager.setAdapter(new UserRequestsViewPagerFragmentAdapter(getSupportFragmentManager(), pages));

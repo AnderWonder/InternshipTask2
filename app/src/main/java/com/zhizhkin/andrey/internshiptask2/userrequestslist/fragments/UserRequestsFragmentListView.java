@@ -16,6 +16,12 @@ import com.zhizhkin.andrey.internshiptask2.model.UserRequestsManager;
 
 public class UserRequestsFragmentListView extends UserRequestsFragment implements AdapterView.OnItemClickListener {
 
+    public static UserRequestsFragment newInstance(UserRequest.StatusType userRequestStatusType) {
+        UserRequestsFragmentListView fragment = new UserRequestsFragmentListView();
+        fragment.mUserRequestsStatusType = userRequestStatusType;
+        return fragment;
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, final ViewGroup container,
                              Bundle savedInstanceState) {

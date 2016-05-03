@@ -8,8 +8,15 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.zhizhkin.andrey.internshiptask2.R;
+import com.zhizhkin.andrey.internshiptask2.model.UserRequest;
 
 public class UserRequestsFragmentRecyclerView extends UserRequestsFragment {
+
+    public static UserRequestsFragmentRecyclerView newInstance(UserRequest.StatusType userRequestStatusType) {
+        UserRequestsFragmentRecyclerView fragment = new UserRequestsFragmentRecyclerView();
+        fragment.mUserRequestsStatusType=userRequestStatusType;
+        return fragment;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

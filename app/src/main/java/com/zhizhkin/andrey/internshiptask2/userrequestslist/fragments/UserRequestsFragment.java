@@ -15,33 +15,16 @@ import com.zhizhkin.andrey.internshiptask2.model.UserRequestsManager;
 
 import java.util.List;
 
-public class UserRequestsFragment extends Fragment {
+public abstract class UserRequestsFragment extends Fragment {
 
     protected List<UserRequest> mUserRequests;
 
-    private UserRequest.StatusType mUserRequestsStatusType;
+    protected UserRequest.StatusType mUserRequestsStatusType;
 
     protected OnListViewCreatedListener mCallback;
 
     public interface OnListViewCreatedListener {
         void onListViewCreated(View listView);
-    }
-
-    public static UserRequestsFragment newInstance(UserRequest.StatusType userRequestStatusType) {
-        UserRequestsFragment fragment;
-        switch (userRequestStatusType) {
-            case IN_PROCESS:
-            case DONE:
-                fragment = new UserRequestsFragmentRecyclerView();
-                break;
-            case WAITING:
-                fragment = new UserRequestsFragmentListView();
-                break;
-            default:
-                fragment = new UserRequestsFragment();
-        }
-        fragment.mUserRequestsStatusType = userRequestStatusType;
-        return fragment;
     }
 
     @Nullable
