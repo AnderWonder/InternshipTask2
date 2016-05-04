@@ -15,7 +15,7 @@ import com.zhizhkin.andrey.internshiptask2.model.UserRequestsManager;
 
 import java.util.List;
 
-public abstract class UserRequestsFragment extends Fragment {
+public class UserRequestsFragment extends Fragment {
 
     protected List<UserRequest> mUserRequests;
 
