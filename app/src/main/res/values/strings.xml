@@ -1,56 +1,56 @@
 <resources>
-    <string name="app_name">InternshipTask2</string>
-    <string name="request_viewer_request_created">Створено</string>
-    <string name="request_viewer_request_registered">Зареєстровано</string>
-    <string name="request_viewer_solve_until">Вирішити до</string>
-    <string name="request_viewer_request_responsible">Відповідальний</string>
-    <string name="request_viewer_request_description">Відкритий люк (біля рекламного щита), район повороту 18 і 19 трамваїв на проспект Мира з Донецького шосе</string>
-    <string name="request_viewer_request_creation_date">26 лютого 2016</string>
-    <string name="request_viewer_request_registration_date">29 лютого 2016</string>
-    <string name="request_viewer_request_solve_date">25 лютого 2016</string>
-    <string name="request_viewer_responsible_name">Дніпропетровський МВК()</string>
+    <string name="app_name">MyStudy2</string>
+    <string name="request_viewer_request_created">Created</string>
+    <string name="request_viewer_request_registered">Registered</string>
+    <string name="request_viewer_solve_until">Deadline</string>
+    <string name="request_viewer_request_responsible">Responsible</string>
+    <string name="request_viewer_request_description">Info</string>
+    <string name="request_viewer_request_creation_date">26/02/2016</string>
+    <string name="request_viewer_request_registration_date">29/02/2016</string>
+    <string name="request_viewer_request_solve_date">25/02/2016</string>
+    <string name="request_viewer_responsible_name">Responsible1</string>
     <string name="request_viewer_pictures_assets_folder" translatable="false">"pictures"</string>
     <string name="request_viewer_uri_part_assets" translatable="false">file:///android_asset/</string>
     <string name="user_request_id_prefix" translatable="false">CE-</string>
-    <string name="user_request_status_type_1">В роботі</string>
-    <string name="user_request_status_type_2">Виконано</string>
-    <string name="user_request_status_type_3">Очікує</string>
-    <string name="user_request_type_1">Демонтаж інших об’єктів, що входять до переліку малих будівельних форм</string>
-    <string name="user_request_type_2">Прибирання та санітарній стан території</string>
-    <string name="user_request_type_3">Питання стосовно нарахування боргу електроенергії</string>
-    <string name="user_request_type_4">Ремонт та обслуговування ліфтів</string>
-    <string name="days_left_suffix">" днів"</string>
+    <string name="user_request_status_type_1">Status1</string>
+    <string name="user_request_status_type_2">Status2</string>
+    <string name="user_request_status_type_3">Status3</string>
+    <string name="user_request_type_1">Type1</string>
+    <string name="user_request_type_2">Type2</string>
+    <string name="user_request_type_3">Type3</string>
+    <string name="user_request_type_4">Type4</string>
+    <string name="days_left_suffix">" days"</string>
     <string name="menu_item_filter">Filter</string>
-    <string name="nav_menu_item_1">Всі звернення</string>
-    <string name="nav_menu_item_2">Звернення на мапі</string>
-    <string name="nav_menu_item_3">Увійти в аккаунт</string>
+    <string name="nav_menu_item_1">Menu item 1</string>
+    <string name="nav_menu_item_2">Menu item 2</string>
+    <string name="nav_menu_item_3">Menu item 3</string>
     <string name="user_request_likes_number">2</string>
-    <string name="user_request_item_address">Вул. Вадима Гетьмана, 42</string>
-    <string name="user_request_item_date">Кві 26, 2016</string>
-    <string name="user_request_item_left_days">- 14 днів</string>
-    <string name="nav_header_text">e-contact</string>
-    <string name="filter_menu_all_item">Всі запроси</string>
+    <string name="user_request_item_address">Address1</string>
+    <string name="user_request_item_date">26/04/2016</string>
+    <string name="user_request_item_left_days">- 14 days</string>
+    <string name="nav_header_text">MyStudy2</string>
+    <string name="filter_menu_all_item">All data</string>
 
     <string-array name="streets_array">
-        <item>вул. Вадима Гетьмана</item>
-        <item>пр. Б.Хмельницького</item>
-        <item>вул. Інженерна</item>
-        <item>вул. Космічна</item>
-        <item>Запорожське шосе</item>
-        <item>пр. Тітова</item>
+        <item>Address1</item>
+        <item>Address2</item>
+        <item>Address3</item>
+        <item>Address4</item>
+        <item>Address5</item>
+        <item>Address6</item>
     </string-array>
 
     <string-array name="requests_info">
-        <item>Відкритий люк (біля рекламного щита)</item>
-        <item>Не працює освітлення</item>
-        <item>Щось там не працює через те що нікто нічого не робить</item>
-        <item>Потрібно негайно виправити недоліки</item>
-        <item>Яма на дорозі котру не можна об\'їхати</item>
+        <item>Info1</item>
+        <item>Info2</item>
+        <item>Info3</item>
+        <item>Info4</item>
+        <item>Info5</item>
     </string-array>
 
     <string-array name="responcibles">
-        <item>Дніпропетровський МВК()</item>
-        <item>РЕС</item>
+        <item>Responsible1</item>
+        <item>Responsible2</item>
     </string-array>
 
 </resources>

@@ -30,7 +30,7 @@ import android.widget.ListView;
 
 import com.melnykov.fab.FloatingActionButton;
 
-import com.zhizhkin.andrey.internshiptask2.InternshipTask2Application;
+import com.zhizhkin.andrey.internshiptask2.MyStudy2Application;
 import com.zhizhkin.andrey.internshiptask2.R;
 import com.zhizhkin.andrey.internshiptask2.data.TestDataContentProvider;
 import com.zhizhkin.andrey.internshiptask2.userrequestslist.fragments.UserRequestsFragment;
@@ -75,7 +75,7 @@ public class UserRequestsListActivity extends AppCompatActivity
 
     private void shiftWidgets(Toolbar toolbar, NavigationView navView) {
         //AppBar
-        int statusBarHeight = InternshipTask2Application.getStatusBarHeight();
+        int statusBarHeight = MyStudy2Application.getStatusBarHeight();
         AppBarLayout.LayoutParams appBarLayoutParams = ((AppBarLayout.LayoutParams) toolbar.getLayoutParams());
         appBarLayoutParams.setMargins(0, statusBarHeight, 0, 0);
         toolbar.setLayoutParams(appBarLayoutParams);
@@ -87,7 +87,7 @@ public class UserRequestsListActivity extends AppCompatActivity
         //FAB
         CoordinatorLayout.LayoutParams coordLayoutParams = (CoordinatorLayout.LayoutParams) mFab.getLayoutParams();
         int fabMargin = (int) getResources().getDimension(R.dimen.fab_margin);
-        coordLayoutParams.setMargins(0, 0, fabMargin, fabMargin + InternshipTask2Application.getNavigationBarHeight());
+        coordLayoutParams.setMargins(0, 0, fabMargin, fabMargin + MyStudy2Application.getNavigationBarHeight());
         mFab.setLayoutParams(coordLayoutParams);
     }
 

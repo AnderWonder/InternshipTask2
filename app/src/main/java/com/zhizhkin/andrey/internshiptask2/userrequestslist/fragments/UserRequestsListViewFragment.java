@@ -9,12 +9,11 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.CursorAdapter;
 import android.widget.ListView;
 
-import com.zhizhkin.andrey.internshiptask2.InternshipTask2Application;
+import com.zhizhkin.andrey.internshiptask2.MyStudy2Application;
 import com.zhizhkin.andrey.internshiptask2.R;
 import com.zhizhkin.andrey.internshiptask2.databinding.UserRequestsListItemBinding;
 import com.zhizhkin.andrey.internshiptask2.data.UserRequest;
@@ -61,7 +60,7 @@ public class UserRequestsListViewFragment extends UserRequestsFragment implement
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        InternshipTask2Application.startRequestViewerActivity((UserRequest) view.getTag(), view);
+        MyStudy2Application.startRequestViewerActivity((UserRequest) view.getTag(), view);
     }
 
     @Override

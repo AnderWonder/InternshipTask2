@@ -21,23 +21,19 @@ class RecyclerViewPicassoUriAdapter extends RecyclerView.Adapter<RecyclerViewPic
 
     private int mImageWidth;
 
-    private UserRequestViewerActivity mActivity;
-
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         private ImageView mImageView;
 
-        public ViewHolder(View v, RecyclerViewPicassoUriAdapter owner) {
+        public ViewHolder(View v) {
             super(v);
             mImageView = (ImageView) v.findViewById(R.id.requestDescriptionImageView);
-            mImageView.setOnClickListener(owner.mActivity);
         }
 
     }
 
-    public RecyclerViewPicassoUriAdapter(List<Uri> UriList, UserRequestViewerActivity activity) {
+    public RecyclerViewPicassoUriAdapter(List<Uri> UriList) {
         mUriList = UriList;
-        mActivity = activity;
     }
 
     @Override
@@ -50,7 +46,7 @@ class RecyclerViewPicassoUriAdapter extends RecyclerView.Adapter<RecyclerViewPic
             mImageWidth /= resources.getInteger(R.integer.user_request_viewer_pictures_per_screen);
         mImageWidth -= resources.getDimension(R.dimen.user_request_viewer_image_item_margin_right);
 
-        return new ViewHolder(LayoutInflater.from(context).inflate(R.layout.user_request_viewer_image_item, parent, false), this);
+        return new ViewHolder(LayoutInflater.from(context).inflate(R.layout.user_request_viewer_image_item, parent, false));
     }
 
     @Override

@@ -7,7 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.zhizhkin.andrey.internshiptask2.InternshipTask2Application;
+import com.zhizhkin.andrey.internshiptask2.MyStudy2Application;
 import com.zhizhkin.andrey.internshiptask2.R;
 import com.zhizhkin.andrey.internshiptask2.databinding.UserRequestsListItemBinding;
 import com.zhizhkin.andrey.internshiptask2.data.UserRequest;
@@ -56,7 +56,7 @@ public class UserRequestsRecyclerViewCursorAdapter extends RecyclerView.Adapter<
 
         @Override
         public void onClick(View v) {
-            InternshipTask2Application.startRequestViewerActivity(mUserRequest, v);
+            MyStudy2Application.startRequestViewerActivity(mUserRequest, v);
         }
     }
 

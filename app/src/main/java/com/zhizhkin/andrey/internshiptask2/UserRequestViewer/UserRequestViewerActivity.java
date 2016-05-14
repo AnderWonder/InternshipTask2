@@ -8,18 +8,13 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.zhizhkin.andrey.internshiptask2.InternshipTask2Application;
+import com.zhizhkin.andrey.internshiptask2.MyStudy2Application;
 import com.zhizhkin.andrey.internshiptask2.databinding.UserRequestViewerContentBinding;
 import com.zhizhkin.andrey.internshiptask2.data.UserRequest;
 import com.zhizhkin.andrey.internshiptask2.R;
 
-public class UserRequestViewerActivity extends AppCompatActivity implements View.OnClickListener {
+public class UserRequestViewerActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,12 +25,11 @@ public class UserRequestViewerActivity extends AppCompatActivity implements View
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) actionBar.setDisplayHomeAsUpEnabled(true);
 
-        UserRequest userRequest = InternshipTask2Application.getCurrentUserRequest();
+        UserRequest userRequest = MyStudy2Application.getCurrentUserRequest();
         setTitle(userRequest.getId());
         ((UserRequestViewerContentBinding) DataBindingUtil.bind(findViewById(R.id.userRequestViewerBindLayout))).setUserRequest(userRequest);
 
-        createRecyclerView(new RecyclerViewPicassoUriAdapter(userRequest.getPictures(), this));
-        setToastsToTextViewsInLayout((LinearLayout) findViewById(R.id.linearLayoutInScroll));
+        createRecyclerView(new RecyclerViewPicassoUriAdapter(userRequest.getPictures()));
     }
 
     private void createRecyclerView(RecyclerView.Adapter adapter) {
@@ -58,17 +52,5 @@ public class UserRequestViewerActivity extends AppCompatActivity implements View
         }
     }
 
-    private void setToastsToTextViewsInLayout(ViewGroup viewGroup) {
-        for (int i = 0; i < viewGroup.getChildCount(); i++) {
-            View v = viewGroup.getChildAt(i);
-            if (v instanceof TextView) v.setOnClickListener(this);
-            else if (v instanceof ViewGroup) setToastsToTextViewsInLayout((ViewGroup) v);
-        }
-    }
-
-    @Override
-    public void onClick(View v) {
-        Toast.makeText(this, getResources().getResourceEntryName(v.getId()), Toast.LENGTH_SHORT).show();
-    }
 }
 

@@ -10,7 +10,7 @@ import com.zhizhkin.andrey.internshiptask2.data.UserRequest;
 import com.zhizhkin.andrey.internshiptask2.userrequestslist.UserRequestsListActivity;
 import com.zhizhkin.andrey.internshiptask2.userrequestviewer.UserRequestViewerActivity;
 
-public class InternshipTask2Application extends Application {
+public class MyStudy2Application extends Application {
 
     private static Context sContext;
 

@@ -6,7 +6,7 @@ import android.net.Uri;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.zhizhkin.andrey.internshiptask2.InternshipTask2Application;
+import com.zhizhkin.andrey.internshiptask2.MyStudy2Application;
 import com.zhizhkin.andrey.internshiptask2.R;
 
 import java.text.ParseException;
@@ -189,7 +189,7 @@ public class UserRequest {
 
         @Override
         public String toString() {
-            return InternshipTask2Application.getContext().getString(mTypeStringResourceId);
+            return MyStudy2Application.getContext().getString(mTypeStringResourceId);
         }
 
         public static RequestType getById(int id){
@@ -213,7 +213,7 @@ public class UserRequest {
 
         @Override
         public String toString() {
-            return InternshipTask2Application.getContext().getString(mNameStringResourceId);
+            return MyStudy2Application.getContext().getString(mNameStringResourceId);
         }
 
         public int getId() {
@@ -235,7 +235,7 @@ public class UserRequest {
     @BindingAdapter("bind:userRequestDate")
     public static void setSolveDate(TextView textView, Date date) {
         if (date != null)
-            textView.setText(getDateInstance(MEDIUM, new Locale("uk", "UA")).format(date));
+            textView.setText(getDateInstance(MEDIUM).format(date));
     }
 
 }
