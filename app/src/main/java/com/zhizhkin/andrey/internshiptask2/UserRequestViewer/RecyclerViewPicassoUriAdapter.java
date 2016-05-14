@@ -63,7 +63,7 @@ class RecyclerViewPicassoUriAdapter extends RecyclerView.Adapter<RecyclerViewPic
 
     @Override
     public int getItemCount() {
-        return mUriList.size();
+        return mUriList == null ? 0 : mUriList.size();
     }
 
 }

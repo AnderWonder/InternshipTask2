@@ -1,46 +1,40 @@
 package com.zhizhkin.andrey.internshiptask2.userrequestslist.fragments;
 
-
 import android.content.Context;
+import android.database.Cursor;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.LoaderManager;
+import android.support.v4.content.CursorLoader;
+import android.support.v4.content.Loader;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 
-import com.zhizhkin.andrey.internshiptask2.model.UserRequest;
-import com.zhizhkin.andrey.internshiptask2.model.UserRequestsManager;
+import com.zhizhkin.andrey.internshiptask2.data.UserRequest;
 
-import java.util.List;
-
-public abstract class UserRequestsFragment extends Fragment {
-
-    protected List<UserRequest> mUserRequests;
+public abstract class UserRequestsFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor> {
 
     protected UserRequest.StatusType mUserRequestsStatusType;
 
-    protected OnListViewCreatedListener mCallback;
+    protected OnFragmentListViewCreatedListener mCallback;
 
-    public interface OnListViewCreatedListener {
-        void onListViewCreated(View listView);
-    }
+    private LoaderManager mLoadManager;
 
-    @Nullable
-    @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        loadUserRequests();
-        return super.onCreateView(inflater, container, savedInstanceState);
+    private Loader<Cursor> mCursorLoader;
+
+    public interface OnFragmentListViewCreatedListener {
+        void onFragmentListViewCreated(View listView);
     }
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+        mLoadManager = getActivity().getSupportLoaderManager();
+        mLoadManager.initLoader(mUserRequestsStatusType.getId(), null, this);
         try {
-            mCallback = (OnListViewCreatedListener) context;
+            mCallback = (OnFragmentListViewCreatedListener) context;
         } catch (ClassCastException e) {
-            Log.e("Error", context.toString() + " must implement OnListViewCreatedListener");
+            Log.e(toString(), context.toString() + " must implement OnFragmentListViewCreatedListener");
         }
     }
 
@@ -48,7 +42,21 @@ public abstract class UserRequestsFragment extends Fragment {
         return mUserRequestsStatusType;
     }
 
-    private void loadUserRequests() {
-        mUserRequests = UserRequestsManager.getInstance().getRequestsWithStatus(mUserRequestsStatusType);
+    public void setCursorLoader(CursorLoader newCursorLoader) {
+        mCursorLoader = newCursorLoader;
+        if (mLoadManager != null)
+            mLoadManager.restartLoader(mUserRequestsStatusType.getId(), null, this);
     }
+
+    @Override
+    public Loader<Cursor> onCreateLoader(int id, Bundle args) {
+        return mCursorLoader;
+    }
+
+    @Override
+    public abstract void onLoadFinished(Loader<Cursor> loader, Cursor data);
+
+    @Override
+    public abstract void onLoaderReset(Loader<Cursor> loader);
+
 }

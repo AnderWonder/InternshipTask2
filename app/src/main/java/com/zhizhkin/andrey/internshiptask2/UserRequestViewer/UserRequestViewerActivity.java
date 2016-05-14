@@ -7,16 +7,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.zhizhkin.andrey.internshiptask2.InternshipTask2Application;
 import com.zhizhkin.andrey.internshiptask2.databinding.UserRequestViewerContentBinding;
-import com.zhizhkin.andrey.internshiptask2.model.UserRequest;
+import com.zhizhkin.andrey.internshiptask2.data.UserRequest;
 import com.zhizhkin.andrey.internshiptask2.R;
-import com.zhizhkin.andrey.internshiptask2.model.UserRequestsManager;
 
 public class UserRequestViewerActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -29,7 +30,7 @@ public class UserRequestViewerActivity extends AppCompatActivity implements View
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) actionBar.setDisplayHomeAsUpEnabled(true);
 
-        UserRequest userRequest = UserRequestsManager.getInstance().getCurrentUserRequest();
+        UserRequest userRequest = InternshipTask2Application.getCurrentUserRequest();
         setTitle(userRequest.getId());
         ((UserRequestViewerContentBinding) DataBindingUtil.bind(findViewById(R.id.userRequestViewerBindLayout))).setUserRequest(userRequest);
 
@@ -43,6 +44,17 @@ public class UserRequestViewerActivity extends AppCompatActivity implements View
             recyclerView.setHasFixedSize(true);
             recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
             recyclerView.setAdapter(adapter);
+        }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
     }
 

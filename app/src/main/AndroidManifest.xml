@@ -24,6 +24,9 @@
             android:parentActivityName=".userrequestslist.UserRequestsListActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <provider android:name="com.zhizhkin.andrey.internshiptask2.data.TestDataContentProvider"
+            android:authorities="zhizhkin.andrey.internshiptask2.data"
+            />
     </application>
 
 </manifest>

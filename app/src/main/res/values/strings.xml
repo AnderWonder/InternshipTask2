@@ -21,7 +21,6 @@
     <string name="user_request_type_4">Ремонт та обслуговування ліфтів</string>
     <string name="days_left_suffix">" днів"</string>
     <string name="menu_item_filter">Filter</string>
-    <string name="user_requests_list_filter_status_default">Всі звернення</string>
     <string name="nav_menu_item_1">Всі звернення</string>
     <string name="nav_menu_item_2">Звернення на мапі</string>
     <string name="nav_menu_item_3">Увійти в аккаунт</string>
@@ -30,6 +29,7 @@
     <string name="user_request_item_date">Кві 26, 2016</string>
     <string name="user_request_item_left_days">- 14 днів</string>
     <string name="nav_header_text">e-contact</string>
+    <string name="filter_menu_all_item">Всі запроси</string>
 
     <string-array name="streets_array">
         <item>вул. Вадима Гетьмана</item>

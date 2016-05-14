@@ -1,5 +1,6 @@
-package com.zhizhkin.andrey.internshiptask2.model;
+package com.zhizhkin.andrey.internshiptask2.data;
 
+import android.database.Cursor;
 import android.databinding.BindingAdapter;
 import android.net.Uri;
 import android.widget.ImageView;
@@ -8,6 +9,9 @@ import android.widget.TextView;
 import com.zhizhkin.andrey.internshiptask2.InternshipTask2Application;
 import com.zhizhkin.andrey.internshiptask2.R;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
@@ -29,6 +33,38 @@ public class UserRequest {
     private String mId;
     private String mResponsible;
     private List<Uri> mPictures;
+
+    public UserRequest() {
+    }
+
+    ;
+
+    public UserRequest(Cursor cursor) {
+        mId = cursor.getString(cursor.getColumnIndex("id"));
+        mLikes = cursor.getInt(cursor.getColumnIndex("likes"));
+        mStatus = StatusType.getById(cursor.getInt(cursor.getColumnIndex("status")));
+        mType = RequestType.getById(cursor.getInt(cursor.getColumnIndex("type")));
+        mRequestInfo = cursor.getString(cursor.getColumnIndex("requestInfo"));
+        mAddress = cursor.getString(cursor.getColumnIndex("address"));
+        mResponsible = cursor.getString(cursor.getColumnIndex("responsible"));
+        mCreationDate = getDate(cursor.getString(cursor.getColumnIndex("creationDate")));
+        mRegistrationDate = getDate(cursor.getString(cursor.getColumnIndex("registrationDate")));
+        mSolveDate = getDate(cursor.getString(cursor.getColumnIndex("solveDate")));
+        mPictures = new ArrayList();
+        String[] pictures = cursor.getString(cursor.getColumnIndex("pictures")).split(";");
+        for (String picture : pictures)
+            mPictures.add(Uri.parse(picture));
+    }
+
+    private Date getDate(String strDate) {
+        Date date = new Date();
+        try {
+            date = new SimpleDateFormat("dd/MM/yy").parse(strDate);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return date;
+    }
 
     public RequestType getType() {
         return mType;
@@ -79,13 +115,16 @@ public class UserRequest {
     }
 
     public int getDaysLeft() {
-        GregorianCalendar gc = new GregorianCalendar();
-        gc.setTime(mSolveDate);
-        return (int) ((System.currentTimeMillis() - gc.getTimeInMillis()) / MILLIS_IN_DAY)+1;
+        if (mSolveDate != null) {
+            GregorianCalendar gc = new GregorianCalendar();
+            gc.setTime(mSolveDate);
+            return (int) ((System.currentTimeMillis() - gc.getTimeInMillis()) / MILLIS_IN_DAY) + 1;
+        }
+        return 0;
     }
 
     public String getRequestInfo() {
-        return mRequestInfo+" "+getAddress();
+        return mRequestInfo + " " + getAddress();
     }
 
     public void setRequestInfo(String mRequestInfo) {
@@ -125,41 +164,66 @@ public class UserRequest {
     }
 
     public enum RequestType {
-        TYPE1(R.string.user_request_type_1, R.drawable.ic_doc),
-        TYPE2(R.string.user_request_type_2, R.drawable.ic_trash),
-        TYPE3(R.string.user_request_type_3, R.drawable.ic_chart),
-        TYPE4(R.string.user_request_type_4, R.drawable.ic_elevator);
+        TYPE1(R.string.user_request_type_1, R.drawable.ic_doc, 0),
+        TYPE2(R.string.user_request_type_2, R.drawable.ic_trash, 1),
+        TYPE3(R.string.user_request_type_3, R.drawable.ic_chart, 2),
+        TYPE4(R.string.user_request_type_4, R.drawable.ic_elevator, 3);
 
         private int mTypeStringResourceId;
         private int mIcId;
+        private int mTypeId;
 
-        RequestType(int typeStringResourceId, int icId) {
+        RequestType(int typeStringResourceId, int icId, int typeId) {
             mTypeStringResourceId = typeStringResourceId;
             mIcId = icId;
+            mTypeId = typeId;
         }
 
         public int getIconId() {
             return mIcId;
         }
 
+        public int getId() {
+            return mTypeId;
+        }
+
         @Override
         public String toString() {
             return InternshipTask2Application.getContext().getString(mTypeStringResourceId);
         }
+
+        public static RequestType getById(int id){
+            for (RequestType type : values())
+                if (type.getId() == id) return type;
+            return null;
+        }
     }
 
     public enum StatusType {
-        IN_PROCESS(R.string.user_request_status_type_1), DONE(R.string.user_request_status_type_2), WAITING(R.string.user_request_status_type_3);
+        IN_PROCESS(R.string.user_request_status_type_1, 0), DONE(R.string.user_request_status_type_2, 1), WAITING(R.string.user_request_status_type_3, 2);
 
         private int mNameStringResourceId;
 
-        StatusType(int nameStringResourceId) {
+        private int mStatusId;
+
+        StatusType(int nameStringResourceId, int loaderId) {
             mNameStringResourceId = nameStringResourceId;
+            mStatusId = loaderId;
         }
 
         @Override
         public String toString() {
             return InternshipTask2Application.getContext().getString(mNameStringResourceId);
+        }
+
+        public int getId() {
+            return mStatusId;
+        }
+
+        public static StatusType getById(int id){
+            for (StatusType status : values())
+                if (status.getId() == id) return status;
+            return null;
         }
     }
 
@@ -170,7 +234,8 @@ public class UserRequest {
 
     @BindingAdapter("bind:userRequestDate")
     public static void setSolveDate(TextView textView, Date date) {
-        textView.setText(getDateInstance(MEDIUM, new Locale("uk", "UA")).format(date));
+        if (date != null)
+            textView.setText(getDateInstance(MEDIUM, new Locale("uk", "UA")).format(date));
     }
 
 }
