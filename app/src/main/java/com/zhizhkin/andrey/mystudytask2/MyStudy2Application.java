@@ -1,15 +1,13 @@
-package com.zhizhkin.andrey.internshiptask2;
+package com.zhizhkin.andrey.mystudytask2;
 
 import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 
-import com.zhizhkin.andrey.internshiptask2.data.UserRequest;
-import com.zhizhkin.andrey.internshiptask2.userrequestslist.UserRequestsListActivity;
-import com.zhizhkin.andrey.internshiptask2.userrequestviewer.UserRequestViewerActivity;
+import com.zhizhkin.andrey.mystudytask2.data.UserRequest;
+import com.zhizhkin.andrey.mystudytask2.userrequestviewer.UserRequestViewerActivity;
 
 public class MyStudy2Application extends Application {
 

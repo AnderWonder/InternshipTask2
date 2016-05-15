@@ -1,4 +1,4 @@
-package com.zhizhkin.andrey.internshiptask2.userrequestviewer;
+package com.zhizhkin.andrey.mystudytask2.userrequestviewer;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
-import com.zhizhkin.andrey.internshiptask2.R;
+import com.zhizhkin.andrey.mystudytask2.R;
 
 import java.util.List;
 

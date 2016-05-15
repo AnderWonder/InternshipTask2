@@ -1,4 +1,4 @@
-package com.zhizhkin.andrey.internshiptask2.data;
+package com.zhizhkin.andrey.mystudytask2.data;
 
 import android.database.Cursor;
 import android.databinding.BindingAdapter;
@@ -6,8 +6,8 @@ import android.net.Uri;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.zhizhkin.andrey.internshiptask2.MyStudy2Application;
-import com.zhizhkin.andrey.internshiptask2.R;
+import com.zhizhkin.andrey.mystudytask2.MyStudy2Application;
+import com.zhizhkin.andrey.mystudytask2.R;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -15,7 +15,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
-import java.util.Locale;
 
 import static java.text.DateFormat.*;
 

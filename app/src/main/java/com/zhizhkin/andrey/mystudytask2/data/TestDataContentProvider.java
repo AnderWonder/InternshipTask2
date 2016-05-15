@@ -1,4 +1,4 @@
-package com.zhizhkin.andrey.internshiptask2.data;
+package com.zhizhkin.andrey.mystudytask2.data;
 
 import android.content.ContentProvider;
 import android.content.ContentValues;
@@ -7,7 +7,7 @@ import android.database.Cursor;
 import android.database.MatrixCursor;
 import android.net.Uri;
 
-import com.zhizhkin.andrey.internshiptask2.R;
+import com.zhizhkin.andrey.mystudytask2.R;
 
 import java.io.IOException;
 import java.text.ParseException;

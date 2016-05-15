@@ -1,4 +1,4 @@
-package com.zhizhkin.andrey.internshiptask2.userrequestslist.fragments;
+package com.zhizhkin.andrey.mystudytask2.userrequestslist.fragments;
 
 import android.database.Cursor;
 import android.databinding.DataBindingUtil;
@@ -7,9 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.zhizhkin.andrey.internshiptask2.R;
-import com.zhizhkin.andrey.internshiptask2.databinding.UserRequestsListItemBinding;
-import com.zhizhkin.andrey.internshiptask2.data.UserRequest;
+import com.zhizhkin.andrey.mystudytask2.R;
+import com.zhizhkin.andrey.mystudytask2.databinding.UserRequestsListItemBinding;
+import com.zhizhkin.andrey.mystudytask2.data.UserRequest;
 
 public class UserRequestsRecyclerViewCursorAdapter extends RecyclerView.Adapter<UserRequestsRecyclerViewCursorAdapter.ViewHolder> {
 

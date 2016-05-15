@@ -1,4 +1,4 @@
-package com.zhizhkin.andrey.internshiptask2.userrequestslist;
+package com.zhizhkin.andrey.mystudytask2.userrequestslist;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

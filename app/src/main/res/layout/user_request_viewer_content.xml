@@ -6,7 +6,7 @@
 
         <variable
             name="userRequest"
-            type="com.zhizhkin.andrey.internshiptask2.data.UserRequest" />
+            type="com.zhizhkin.andrey.mystudytask2.data.UserRequest" />
     </data>
 
     <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"

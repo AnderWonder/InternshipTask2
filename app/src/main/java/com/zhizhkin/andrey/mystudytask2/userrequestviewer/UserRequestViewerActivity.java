@@ -1,4 +1,4 @@
-package com.zhizhkin.andrey.internshiptask2.userrequestviewer;
+package com.zhizhkin.andrey.mystudytask2.userrequestviewer;
 
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
@@ -9,10 +9,10 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
-import com.zhizhkin.andrey.internshiptask2.MyStudy2Application;
-import com.zhizhkin.andrey.internshiptask2.databinding.UserRequestViewerContentBinding;
-import com.zhizhkin.andrey.internshiptask2.data.UserRequest;
-import com.zhizhkin.andrey.internshiptask2.R;
+import com.zhizhkin.andrey.mystudytask2.MyStudy2Application;
+import com.zhizhkin.andrey.mystudytask2.databinding.UserRequestViewerContentBinding;
+import com.zhizhkin.andrey.mystudytask2.data.UserRequest;
+import com.zhizhkin.andrey.mystudytask2.R;
 
 public class UserRequestViewerActivity extends AppCompatActivity {
 

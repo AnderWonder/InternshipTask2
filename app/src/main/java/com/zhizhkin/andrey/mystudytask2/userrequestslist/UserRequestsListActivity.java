@@ -1,4 +1,4 @@
-package com.zhizhkin.andrey.internshiptask2.userrequestslist;
+package com.zhizhkin.andrey.mystudytask2.userrequestslist;
 
 import android.content.ContentValues;
 import android.os.AsyncTask;
@@ -30,11 +30,11 @@ import android.widget.ListView;
 
 import com.melnykov.fab.FloatingActionButton;
 
-import com.zhizhkin.andrey.internshiptask2.MyStudy2Application;
-import com.zhizhkin.andrey.internshiptask2.R;
-import com.zhizhkin.andrey.internshiptask2.data.TestDataContentProvider;
-import com.zhizhkin.andrey.internshiptask2.data.UserRequest;
-import com.zhizhkin.andrey.internshiptask2.userrequestslist.fragments.UserRequestsRecyclerViewFragment;
+import com.zhizhkin.andrey.mystudytask2.MyStudy2Application;
+import com.zhizhkin.andrey.mystudytask2.R;
+import com.zhizhkin.andrey.mystudytask2.data.TestDataContentProvider;
+import com.zhizhkin.andrey.mystudytask2.data.UserRequest;
+import com.zhizhkin.andrey.mystudytask2.userrequestslist.fragments.UserRequestsRecyclerViewFragment;
 
 import java.util.ArrayList;
 import java.util.List;
