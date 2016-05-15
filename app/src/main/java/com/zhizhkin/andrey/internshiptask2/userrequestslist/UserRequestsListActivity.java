@@ -33,16 +33,14 @@ import com.melnykov.fab.FloatingActionButton;
 import com.zhizhkin.andrey.internshiptask2.MyStudy2Application;
 import com.zhizhkin.andrey.internshiptask2.R;
 import com.zhizhkin.andrey.internshiptask2.data.TestDataContentProvider;
-import com.zhizhkin.andrey.internshiptask2.userrequestslist.fragments.UserRequestsFragment;
 import com.zhizhkin.andrey.internshiptask2.data.UserRequest;
-import com.zhizhkin.andrey.internshiptask2.userrequestslist.fragments.UserRequestsListViewFragment;
 import com.zhizhkin.andrey.internshiptask2.userrequestslist.fragments.UserRequestsRecyclerViewFragment;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class UserRequestsListActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, UserRequestsFragment.OnFragmentListViewCreatedListener, PopupMenu.OnMenuItemClickListener {
+        implements NavigationView.OnNavigationItemSelectedListener, UserRequestsRecyclerViewFragment.OnFragmentListViewCreatedListener, PopupMenu.OnMenuItemClickListener {
 
     private FloatingActionButton mFab;
 
@@ -105,15 +103,7 @@ public class UserRequestsListActivity extends AppCompatActivity
 
     @NonNull
     private Pair<String,Fragment> createPage(UserRequest.StatusType status) {
-        UserRequestsFragment userRequestsFragment;
-        switch (status) {
-            case IN_PROCESS:
-            case DONE:
-                userRequestsFragment=UserRequestsRecyclerViewFragment.newInstance(status);
-                break;
-            default:
-                userRequestsFragment=UserRequestsListViewFragment.newInstance(status);
-        }
+        UserRequestsRecyclerViewFragment userRequestsFragment = UserRequestsRecyclerViewFragment.newInstance(status);
         userRequestsFragment.setCursorLoader(new CursorLoader(this, TestDataContentProvider.PROVIDER_URI, null, String.valueOf(status.getId()), null, String.valueOf(-1)));
         return new Pair<String,Fragment>(status.toString(),userRequestsFragment);
     }
@@ -169,7 +159,7 @@ public class UserRequestsListActivity extends AppCompatActivity
             setTitle(UserRequest.RequestType.getById(item.getItemId()).toString());
         }
         for (Pair<String, Fragment> page : mPages) {
-            UserRequestsFragment fragment = ((UserRequestsFragment) page.second);
+            UserRequestsRecyclerViewFragment fragment = ((UserRequestsRecyclerViewFragment) page.second);
             fragment.setCursorLoader(new CursorLoader(this, TestDataContentProvider.PROVIDER_URI,
                     null, String.valueOf(fragment.getUserRequestsStatusType().getId()), null, String.valueOf(item.getItemId())));
         }
