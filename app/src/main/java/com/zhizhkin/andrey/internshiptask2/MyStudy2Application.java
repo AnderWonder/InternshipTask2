@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.zhizhkin.andrey.internshiptask2.data.UserRequest;
@@ -44,9 +45,8 @@ public class MyStudy2Application extends Application {
         return result;
     }
 
-    public static void startRequestViewerActivity(UserRequest request, View view) {
-        sCurrentUserRequest =request;
-        UserRequestsListActivity activity = ((UserRequestsListActivity) view.getContext());
+    public static void startRequestViewerActivity(UserRequest request, AppCompatActivity activity) {
+        sCurrentUserRequest = request;
         activity.startActivity(new Intent(activity, UserRequestViewerActivity.class));
     }
 

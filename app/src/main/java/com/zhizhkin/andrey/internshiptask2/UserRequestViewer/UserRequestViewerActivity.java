@@ -34,11 +34,9 @@ public class UserRequestViewerActivity extends AppCompatActivity {
 
     private void createRecyclerView(RecyclerView.Adapter adapter) {
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.requestDescriptionRecyclerView);
-        if (recyclerView != null) {
-            recyclerView.setHasFixedSize(true);
-            recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-            recyclerView.setAdapter(adapter);
-        }
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        recyclerView.setAdapter(adapter);
     }
 
     @Override

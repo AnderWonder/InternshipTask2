@@ -44,7 +44,7 @@
                 android:drawableLeft="@drawable/ic_like"
                 android:drawablePadding="@dimen/user_request_item_text_view1_padding"
                 android:gravity="center"
-                android:text="@{String.valueOf(userRequest.getLikes()), default=@string/user_request_likes_number}" />
+                android:text="@{String.valueOf(userRequest.getLikes()), default=@string/user_request_likes_number}"/>
 
         </RelativeLayout>
 

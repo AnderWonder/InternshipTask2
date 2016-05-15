@@ -7,22 +7,28 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.zhizhkin.andrey.internshiptask2.MyStudy2Application;
 import com.zhizhkin.andrey.internshiptask2.R;
 import com.zhizhkin.andrey.internshiptask2.databinding.UserRequestsListItemBinding;
 import com.zhizhkin.andrey.internshiptask2.data.UserRequest;
 
 public class UserRequestsRecyclerViewCursorAdapter extends RecyclerView.Adapter<UserRequestsRecyclerViewCursorAdapter.ViewHolder> {
 
+    public interface OnItemClickListener {
+        public void onItemClick(ViewHolder holder);
+    }
+
     private Cursor mCursor;
 
-    public UserRequestsRecyclerViewCursorAdapter(Cursor cursor) {
+    private OnItemClickListener mOnItemClickListener;
+
+    public UserRequestsRecyclerViewCursorAdapter(Cursor cursor, OnItemClickListener mOnItemClickListener) {
         mCursor = cursor;
+        this.mOnItemClickListener = mOnItemClickListener;
     }
 
     @Override
     public UserRequestsRecyclerViewCursorAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.user_requests_list_item, parent, false));
+        return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.user_requests_list_item, parent, false),this);
     }
 
     @Override
@@ -38,16 +44,30 @@ public class UserRequestsRecyclerViewCursorAdapter extends RecyclerView.Adapter<
         return mCursor == null ? 0 : mCursor.getCount();
     }
 
+    public Cursor swapCursor(Cursor newCursor){
+        Cursor oldCursor=null;
+        if (newCursor != mCursor) {
+            oldCursor=mCursor;
+            mCursor=newCursor;
+        }
+        return oldCursor;
+    }
+
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         private View mView;
-
         private UserRequest mUserRequest;
+        private UserRequestsRecyclerViewCursorAdapter mOwner;
 
-        public ViewHolder(View v) {
+        public ViewHolder(View v, UserRequestsRecyclerViewCursorAdapter owner) {
             super(v);
             mView = v;
+            mOwner = owner;
             v.setOnClickListener(this);
+        }
+
+        public UserRequest getUserRequest() {
+            return mUserRequest;
         }
 
         public void setUserRequest(UserRequest request) {
@@ -56,17 +76,9 @@ public class UserRequestsRecyclerViewCursorAdapter extends RecyclerView.Adapter<
 
         @Override
         public void onClick(View v) {
-            MyStudy2Application.startRequestViewerActivity(mUserRequest, v);
+            mOwner.mOnItemClickListener.onItemClick(this);
         }
-    }
 
-    public Cursor swapCursor(Cursor newCursor){
-        Cursor oldCursor=null;
-        if (newCursor != mCursor) {
-            oldCursor=mCursor;
-            mCursor=newCursor;
-        }
-        return oldCursor;
     }
 
 }
